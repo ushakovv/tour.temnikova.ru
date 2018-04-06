@@ -1,0 +1,160 @@
+.videos {
+	text-align: center;
+	padding: 50px 0 30px;
+	background-image: url(back.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+
+	.slick-list {
+		padding: 40px 0;
+	
+		@media (max-width: 768px) {
+			padding: 0;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 130px;
+			bottom: 0;
+			background: linear-gradient(to right, rgba(26,28,32,1) 0%, rgba(26,28,32,0) 100%);
+			z-index: 10;
+	
+			@media (max-width: 768px) {
+				display: none;
+			}
+		}
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 130px;
+			bottom: 0;
+			background: linear-gradient(to left, rgba(26,28,32,1) 0%, rgba(26,28,32,0) 100%);
+			z-index: 10;
+	
+			@media (max-width: 768px) {
+				display: none;
+			}
+		}
+	}
+}
+
+.videos__icon {
+	position: relative;
+	margin: 0 auto 30px;
+	display: inline-block;
+	font-size: 32px;
+	color: #fff;
+	text-align: center;
+
+	@media (max-width: 768px) {
+		& {
+			font-size: 26px;
+		}
+	}
+
+	&:before {
+		 content: '';
+		 width: calc(80px/2);
+		 height: calc(66px/2);
+		 position: absolute;
+		 background-image: url(icon.png);
+		 background-size: 100% auto;
+		 background-repeat: no-repeat;
+		 left: -50px;
+	 }
+}
+
+.videos__item {
+	cursor: pointer;
+	transition: all 300ms ease;
+	opacity: 0.2;
+	margin: 70px 12px;
+	
+	@media (max-width: 768px) {
+		opacity: 1;
+		transform: scale(1);
+		margin: 0 12px;
+	}
+}
+
+.videos__poster-wrap {
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.videos__poster {
+	width: 100%;
+}
+
+.videos__play {
+	display: none;
+	background-color: rgba(26, 28, 32, 0.8);
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -25px 0 0 -25px;
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 15px;
+		left: 20px;
+		border-left: 12px solid #fff;
+		border-top: 9px solid transparent;
+		border-bottom: 9px solid transparent;
+	}
+	
+	@media (max-width: 768px) {
+		display: block !important;
+	}
+}
+
+.videos__city {
+	font-size: 16px;
+	line-height: 20px;
+	color: #fff;
+	opacity: 0.4;
+	text-align: center;
+}
+
+.videos__date {
+	font-size: 14px;
+	line-height: 20px;
+	color: #fff;
+	opacity: 0.4;
+	text-align: center;
+}
+
+.videos__city_popup {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.videos__date_popup {
+	font-size: 16px;
+}
+
+.slick-center {
+	position: relative;
+	z-index: 10;
+
+	.videos__item {
+		opacity: 1;
+		transform: scale(1.6);
+	}
+
+	.videos__play {
+		display: block;
+	}
+}

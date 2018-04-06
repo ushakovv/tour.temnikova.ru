@@ -1,0 +1,188 @@
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+.cmsCbDiv {
+    background-image: url(../images/cb_unchecked.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30px;
+    cursor: pointer;
+    background-size: 24px 24px;
+}
+
+.cmsCbDiv.checked {
+    background-image: url(../images/cb_checked.png);
+}
+
+.grid-view .table .button-column {
+    min-width: 70px;
+}
+td.button-column a.update img, td.button-column a.delete img{
+    opacity: 0.5;
+}
+td.button-column a.update img:hover, td.button-column a.delete img:hover{
+    opacity: 1;
+}
+
+table.table th a{
+    color: black;
+}
+div.grid-view div.summary {
+    color: #999999;
+    font-size: 12px;
+    padding: 6px 0;
+    text-align: right;
+}
+
+.theModal {
+    background: #eee;
+    width: 820px;
+    margin: 70px auto;
+
+    border: 3px solid #666;
+}
+
+.theModal .close {
+    float: right;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+.theModal .modalInner{
+    padding: 20px;
+}
+.theModal h4{
+    margin-top:0;
+}
+.theModal .form-actions{
+    margin: 0;
+}
+.theModal .form-actions button{
+    margin-left: 5px;
+}
+.type_block{
+    display: none;
+}
+.textsTr:hover td{
+    cursor: pointer;
+}
+.textsTr:hover td{
+    background-color: #eeeeee !important;
+}
+.contentView {
+}
+.contentView.overflow{
+    height: 200px;
+    overflow: auto;
+}
+
+.pass_block .pass {
+    background-image: url(../images/show_pass.gif);
+    background-position: 0px -11px;
+    height: 11px;
+    width: 18px;
+}
+.pass_block .pass.show {
+    background-position: 0px 0px;
+}
+
+.subform {
+    margin: 0 0 10px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-color: #ddd;
+    border-width: 1px;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-style: solid;
+}

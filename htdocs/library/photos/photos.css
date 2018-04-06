@@ -1,0 +1,31 @@
+.photos {
+	padding: 20px 0 60px;
+	text-align: center;
+}
+
+.photos__icon {
+	position: relative;
+	display: inline-block;
+	margin: 0 auto 30px;
+	font-size: 32px;
+	color: #fff;
+	text-align: center;
+
+	@media (max-width: 768px) {
+		& {
+			font-size: 26px;
+		}
+	}
+
+	&:before {
+		 content: '';
+		 width: calc(80px/2);
+		 height: calc(66px/2);
+		 position: absolute;
+		 background-image: url(icon.png);
+		 background-size: 100% auto;
+		 background-repeat: no-repeat;
+		 left: -50px;
+		 top: 5px;
+	 }
+}

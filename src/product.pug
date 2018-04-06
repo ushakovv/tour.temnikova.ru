@@ -1,0 +1,67 @@
+extends layouts/default
+
+block content
+	.section-inner
+		.products-order
+			.product-photo
+				a.logo-tetrapak(href="http://www.tetrapak.com/ru" target="_blank" title="Tetra Pak") Tetra Pak
+				img(src="i/bottle-1.png")
+			.description
+				h1.section-title Молочный протеиновый коктейль со вкусом ванили
+				p Коктейль молочный ультрапастеризованный, обогащенный белком, со вкусом ванильного мороженого. Массовая доля жира 0,1%
+				.subtitle Состав:
+				p молоко обезжиренное, изолят молочного белка (обогащен мицеллярным казеином), молоко сухое обезжиренное, ароматизаторы пищевые: «Ваниль» и «Сливочный пломбир», подсластитель «Сукралоза». Масса нетто 250г.
+				table.composition
+					tr
+						th
+							.subtitle Пищевая ценность
+						th
+							.subtitle 100г.
+						th
+							.subtitle 250г.
+					tr
+						td Белок
+						td 12 гр.
+						td 30 гр.
+					tr
+						td Углеводы
+						td 5,6 гр.
+						td 14,0 гр.
+					tr
+						td Жир
+						td 0,1 гр.
+						td 0,25 гр.
+					tr
+						td Энергетическая ценность
+						td 296,0 кДж
+						td 740,0 кДж
+
+					tr
+						td (калорийность)
+						td (71,0ккал)
+						td (178 ккал)
+				a(href="#").btn.buy
+					i.icon.cart
+					| Заказать
+		.product-too
+			.other-sample
+				img(src="i/bottle-1.png")
+				p Коктейль молочный ультрапастеризованный, обогащенный белком, со вкусом ванильного мороженого. Массовая доля жира 0,1%
+				a(href="#").btn.buy
+					i.icon.cart
+					| Заказать
+				a(href="#").more-link.scroll-link подробнее...
+			.other-sample
+				img(src="i/bottle-2.png")
+				p Коктейль молочный ультрапастеризованный, обогащенный белком, шоколадный. Массовая доля жира 0,2%
+				a(href="#").btn.buy
+					i.icon.cart
+					| Заказать
+				a(href="#").more-link.scroll-link подробнее...
+			.other-sample
+				img(src="i/bottle-3.png")
+				p Коктейль молочный ультрапастеризованный, обогащенный белком, со вкусом клубники со сливками. Массовая доля жира 0,1%
+				a(href="#").btn.buy
+					i.icon.cart
+					| Заказать
+				a(href="#").more-link.scroll-link подробнее...

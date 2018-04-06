@@ -1,0 +1,6 @@
+#ponominalu_widget {
+    min-height: 300px;
+    background-color: #fff;
+    background-image: url(../preloader.gif);
+    background-position: center;
+}

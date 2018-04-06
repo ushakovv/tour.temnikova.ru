@@ -1,0 +1,58 @@
+.mediaFile {
+    margin-top: 10px;
+    height:48px;
+    background-image: url(../images/48px/_blank.png);
+    background-repeat: no-repeat;
+    padding: 0px 0 0 55px;
+    color: #696969;
+    font-size: 16px;
+}
+.mediaFileImage {
+    margin-top: 10px;
+    height: auto;
+    padding: 0;
+    color: #696969;
+    font-size: 16px;
+}
+.mediaFileError {
+    color: red;
+}
+a.redOnHover {
+    color: #696969;
+}
+a.redOnHover:hover {
+    color: red;
+}
+
+.mediaFileImage img {
+    max-width: 400px;
+    max-height: 100px;
+    -webkit-box-shadow: 1px -1px 13px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px -1px 13px -2px rgba(0,0,0,0.75);
+    box-shadow: 1px -1px 13px -2px rgba(0,0,0,0.75);
+    float: left;
+    margin-right: 15px;
+}
+
+.mediaFile.avi { background-image: url(../images/48px/avi.png); }
+.mediaFile.doc { background-image: url(../images/48px/doc.png); }
+.mediaFile.exe { background-image: url(../images/48px/exe.png); }
+.mediaFile.flv { background-image: url(../images/48px/flv.png); }
+.mediaFile.gif { background-image: url(../images/48px/gif.png); }
+.mediaFile.html { background-image: url(../images/48px/html.png); }
+.mediaFile.jpg { background-image: url(../images/48px/jpg.png); }
+.mediaFile.mp3 { background-image: url(../images/48px/mp3.png); }
+.mediaFile.mp4 { background-image: url(../images/48px/mp4.png); }
+.mediaFile.mpg { background-image: url(../images/48px/mpg.png); }
+.mediaFile.pdf { background-image: url(../images/48px/pdf.png); }
+.mediaFile.png { background-image: url(../images/48px/png.png); }
+.mediaFile.ppt { background-image: url(../images/48px/ppt.png); }
+.mediaFile.psd { background-image: url(../images/48px/psd.png); }
+.mediaFile.rar { background-image: url(../images/48px/rar.png); }
+.mediaFile.rtf { background-image: url(../images/48px/rtf.png); }
+.mediaFile.tiff { background-image: url(../images/48px/tiff.png); }
+.mediaFile.txt { background-image: url(../images/48px/txt.png); }
+.mediaFile.xls { background-image: url(../images/48px/xls.png); }
+.mediaFile.xlsx { background-image: url(../images/48px/xlsx.png); }
+.mediaFile.xml { background-image: url(../images/48px/xml.png); }
+.mediaFile.zip { background-image: url(../images/48px/zip.png); }

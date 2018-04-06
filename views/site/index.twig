@@ -1,0 +1,189 @@
+{% include 'menu.twig' %}
+<div class="container">
+    <div class="events">
+        <div class="events__title">Предстоящие выступления</div>
+        <form class="events__select" name="events-filter" data-js="filterForm">
+            <div class="scroll-pane__wrapper">
+                <div class="select-custom select-custom__arrow select_month select__type">Все месяцы</div>
+                <div class="select scroll-pane" data-js="scrollPane">
+                    <p class="scroll-pane__item" data-value="all">
+                        <span class="scroll-pane__text">
+                            Все месяцы
+                        </span>
+                    </p>
+                    {% for filter in filters.month | keys %}
+                        <p class="scroll-pane__item" data-value="{{ filter | lower }}">
+                            <span class="scroll-pane__text">
+                                {{ filters.month[filter] }}
+                            </span>
+                        </p>
+                    {% endfor %}
+                </div>
+                <input type="hidden" name="month" value="all">
+            </div>
+            <div class="scroll-pane__wrapper">
+                <div class="select-custom select-custom__arrow select_city select__type">Все города</div>
+                <div class="select scroll-pane" data-js="scrollPane">
+                    <p class="scroll-pane__item" data-value="all">
+                        <span class="scroll-pane__text">
+                            Все города
+                        </span>
+                    </p>
+                    {% for city in filters.city %}
+                        <p class="scroll-pane__item" data-value="{{ city | lower }}">
+                            <span class="scroll-pane__text">
+                                {{ city }}
+                            </span>
+                        </p>
+                    {% endfor %}
+                </div>
+                <input type="hidden" name="city" value="all">
+            </div>
+        </form>
+        <div class="events__cities custom-slider">
+            <div class="custom-slider__arrow custom-slider__arrow_left" data-scroll-to="prev"></div>
+            <div class="custom-slider__arrow custom-slider__arrow_right" data-scroll-to="next"></div>
+            <div class="slider custom-slider__wrapper" data-js="customSlider" data-slides-to-show="5" data-mobile-off="true" data-slides-to-show-mobile="1">
+                {% for event in events %}
+                    {% if event.id %}
+                        <div class="events__city" data-events-month="{{ event.month | lower }}" data-events-city="{{ event.name | lower }}" onclick="openMapToSlider({{ loop.index - 1 }})">
+                            <div class="events__icon"></div>
+                            <div class="events__name">{{ event.name }}</div>
+                            <div class="events__date">{{ daterus(event.tour_dt) }}</div>
+                            <div class="events__description">{{ event.place }}</div>
+                            <div class="events__more no-phone">Подробнее</div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="center">
+                <div class="events__more events__more_all no-phone">Подробнее</div>
+            </div>
+        </div>
+        <div class="events__hidden">
+            {% for event in events %}
+                {% if event.id %}
+                    <div class="events__city events__city_h" data-events-month="{{ event.month | lower }}" data-events-city="{{ event.name | lower }}" onclick="openMapToSlider({{ loop.index - 1 }})">
+                        <div class="events__icon"></div>
+                        <div class="events__name">{{ event.name }}</div>
+                        <div class="events__date">{{ daterus(event.tour_dt) }}</div>
+                        <div class="events__description">{{ event.place }}</div>
+                        <div class="events__more no-phone">Подробнее</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% if videos is not empty %}
+        <div class="videos">
+            <p class="videos__icon">Видео с выступлений</p>
+            <div class="slider" data-js="slider" data-slides-to-show="3" data-center-mode="true" data-slides-to-show-mobile="1" data-center-mode-mobile="false">
+                {% for v in videos %}
+                <div onclick="popup('video', { 'videoUrl': '{{ v.source }}', 'city': '{{ v.city }}', 'date': '{{ daterus(v.date) }}' })">
+                    <div class="videos__item">
+                        <div class="videos__poster-wrap">
+                            <img src="{{ v.preview }}" alt="" class="videos__poster">
+                            <div class="videos__play"></div>
+                        </div>
+                        <div class="videos__city">{{ v.city }}</div>
+                        <div class="videos__date">{{ daterus(v.date) }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    {% if vkPhotos is not empty %}
+        <div class="photos">
+            <p class="photos__icon">Фото с выступлений</p>
+            <div class="slider" data-js="slider" data-slides-to-show="10" data-slides-to-show-mobile="3">
+                {% for image in vkPhotos %}
+                    <a href="{{ image.normal }}" data-lightbox="album">
+                        <div style="background-image: url('{{ image.prev }}')" alt="" class="slider__item"></div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+</div>
+<div class="hr"></div>
+<div class="info-partner">
+    <div class="info-partner__title">Информационные партнеры тура</div>
+    <div class="info-partner__items">
+        {% for partner in partners %}
+            <a href="{{ partner.link }}" target="_blank" class="info-partner__lnk">
+                <img style="max-width: 100%;max-height: 100%;" src="{{ partner.logo }}" alt="{{ partner.title }}" class="info-partner__item">
+            </a>
+        {% endfor %}
+    </div>
+</div>
+<div class="hr hidden"></div>
+<div class="to-shop hidden">
+    <div class="to-shop__icon"></div>
+    <a class="to-shop__text" target="_blank" href="//temnikova.shop" title="Перейти в официальный интернет-магазин">Перейти в официальный интернет-магазин</a>
+</div>
+<div class="hr hidden"></div>
+<div class="container hidden">
+    <div class="grid">
+        {% if shopData.featured.products is not empty %}
+            <div class="grid__col grid__col_6 grid__m-col_12">
+                <div class="shop-slider">
+                    <div class="shop-slider__header">Новинки</div>
+                    <div class="product" data-js="slider" data-slides-to-show="5" data-slides-to-show-mobile="3">
+                        {% for item in shopData.featured.products %}
+                            <a href="javascript:void(0);" onclick="popup('product', {'productUrl': '{{ item.href | replace({'amp;': ''}) }}', 'imageUrl': '{{ item.image }}' })">
+                                <img src="{{ item.thumb }}" alt="{{ item.name }}" class="slider__item">
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if shopData.latest.products is not empty %}
+        <div class="grid__col grid__col_6 grid__m-col_12 shop-slider__last">
+            <div class="shop-slider">
+                <div class="shop-slider__header">Хиты продаж</div>
+                <div class="slider" data-js="slider" data-slides-to-show="5" data-slides-to-show-mobile="3">
+                    {% for item in shopData.latest.products %}
+                        <a href="javascript:void(0);" onclick="popup('product', {'productUrl': '{{ item.href | replace({'amp;': ''}) }}', 'imageUrl': '{{ item.image }}' })">
+                            <img src="{{ item.thumb }}" alt="{{ item.name }}" onclick="popup('product', {'productUrl': '{{ item.href | e }}', 'imageUrl': '{{ item.image }}' })" class="slider__item">
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<div class="hr"></div>
+<div class="footer">
+    <div class="footer__logo">
+        {% for site in footerSites %}
+            {% if site.name == 'Темникова' %}
+                <a href="{{ site.url }}" target="_blank" class="footer__temnikova">
+                    <img src="{{ site.logo }}" alt="">
+                </a>
+                <div class="footer__divider"></div>
+            {% else %}
+                <a href="{{ site.url }}" target="_blank" class="footer__volkov">
+                    <img src="{{ site.logo }}" alt="">
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="footer__social">
+        {% for group in footerGoup %}
+            <a href="{{ group.link }}" target="_blank" class="footer__icon" title="{{ group.name }}">
+                <img src="{{ group.logo }}" alt="{{ group.name }}" class="footer__logo_social">
+                <img src="{{ group.logo_active }}" alt="{{ group.name }}" class="footer__logo_social footer__logo_social_h">
+            </a>
+        {% endfor %}
+    </div>
+</div>
+<div class="hr"></div>
+<div class="concert-photo-album"></div>
+<div class="footer-copyright">
+    {{ footer.code | raw }}
+</div>
+</div>
+{% include 'popups.twig' %}

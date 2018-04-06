@@ -1,0 +1,51 @@
+<style>
+	.rules label {
+		font-weight: normal;
+		margin-right: 20px;
+	}
+	.rules .center {
+		text-align: center;
+	}
+</style>
+<div id="permissions_block">
+	{% for group in data %}
+		<div class="rules">
+			<h4>{{ group['name'] }}</h4>
+			<table class="table" cellspacing="0">
+				<tr>
+					<th style="width: 128px;">Раздел</th>
+					<th>Создание</th>
+					<th>Просмотр</th>
+					<th>Редактирование</th>
+					<th>Удаление</th>
+				</tr>
+                {% for section in group['sections'] %}
+					<tr>
+						<td><a href="/admin/{{ section['uri'] }}" target="_blank">{{ section['name'] }}</a></td>
+						
+						<td class="center">
+							<input type="checkbox" name="Section_permissions[{{ section['id'] }}][c]" class="rules"
+							       id="Section_permissions_{{ section['id'] }}_c" {% if section['c'] %}checked="true"{% endif %}
+							       title="Создание" {% if not section['is_crud_section'] %} style="display: none;"{% endif %}>
+						</td>
+						<td class="center">
+							<input type="checkbox" name="Section_permissions[{{ section['id'] }}][r]" class="rules"
+							       id="Section_permissions_{{ section['id'] }}_r" {% if section['r'] %}checked="true"{% endif %}
+							       title="Просмотр" {% if not section['is_crud_section'] %} style="display: none;"{% endif %}>
+						</td>
+						<td class="center">
+                            <input type="checkbox" name="Section_permissions[{{ section['id'] }}][u]" class="rules"
+                                   id="Section_permissions_{{ section['id'] }}_u" {% if section['u'] %}checked="true"{% endif %}
+                                   title="Редактирование" {% if not section['is_crud_section'] %} style="display: none;"{% endif %}>
+						</td>
+						<td class="center">
+                            <input type="checkbox" name="Section_permissions[{{ section['id'] }}][d]" class="rules"
+                                   id="Section_permissions_{{ section['id'] }}_d" {% if section['d'] %}checked="true"{% endif %}
+                                   title="Удаление" {% if not section['is_crud_section'] %} style="display: none;"{% endif %}>
+						</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+    {% endfor %}
+</div>

@@ -1,0 +1,286 @@
+extends layouts/default
+
+block body
+	- var bodyClass = "homepage";
+
+
+block content
+	section.section.section-make-choice#top
+		.section-inner
+			.make-choice-items
+				.make-choice-item.active(data-order="1")
+					.make-choice-description
+						p Идеально<br> сбалансирован
+						p Ускоряет<br> рост мышц
+						p Уже готов<br> к употреблению
+					.make-choice-pack
+					.clear
+					.make-choice-text
+						h1.make-choice-title Готовый протеиновый коктейль
+						p Выбери свой вкус
+						a(href="#add-item").btn.buy.modalWindowLink
+							i.icon.cart
+							| Закажи сейчас
+				.make-choice-item(data-order="2")
+					.make-choice-description
+						p Идеально<br> сбалансирован
+						p Ускоряет<br> рост мышц
+						p Уже готов<br> к употреблению
+					.make-choice-pack.chocolate
+					.clear
+					.make-choice-text
+						h1.make-choice-title Готовый протеиновый коктейль
+						p Выбери свой вкус
+						a(href="#add-item").btn.buy.modalWindowLink
+							i.icon.cart
+							| Закажи сейчас
+				.make-choice-item(data-order="3")
+					.make-choice-description
+						p Идеально<br> сбалансирован
+						p Ускоряет<br> рост мышц
+						p Уже готов<br> к употреблению
+					.make-choice-pack.strawberry
+					.clear
+					.make-choice-text
+						h1.make-choice-title Готовый протеиновый коктейль
+						p Выбери свой вкус
+						a(href="#add-item").btn.buy.modalWindowLink
+							i.icon.cart
+							| Закажи сейчас
+			.make-choice-nav
+				a(href="", data-order="1").active
+					img(src="i/pack-vanila.png")
+					| Ваниль
+				a(href="", data-order="2")
+					img(src="i/pack-chocolate.png")
+					| Шоколад
+				a(href="", data-order="3")
+					img(src="i/pack-strawberry.png")
+					| Клубника
+
+	section.section.section-spec-message
+		.section-inner
+			.col.left
+				.section-title Коктейль с&nbsp;высоким содержанием протеина
+				p.text Рекомендуемая разовая порция протеина, которую удобно взять с&nbsp;собой на&nbsp;тренировку. To&nbsp;be — это&nbsp;вкусный и&nbsp;полезный напиток, уже готовый к&nbsp;употреблению
+				a(href="#products-block").btn.scroll-link О продукте
+			.col.right
+				.spec-name
+					h5 Денис Семенихин
+					p Специалист по фитнесу, видеоблогер, телеведущий
+				.video-block
+					a(href="#food-video").btn-play.modalWindowLink
+					.section-title Питание — важный&nbsp;элемент тренировок
+					p.text Чем питаться сразу после тренировкки, чтобы&nbsp;закрепить эффект и быстро восстановить мышцы.
+			.clear
+
+
+	section.section.section-articles#articles-block
+		.section-inner
+			.section-title Статьи
+			//a(href="#").more-link Все статьи
+				i.icon.arr-r
+			.article-slider
+				.article-item
+					h5.article-item-title Статья 1 желательно не&nbsp;больше 30-50 знаков
+					p.text Краткое описание статьи Всего одино предложение
+					a(href="#article").btn.modalWindowLink Подробнее
+				.article-item
+					h5.article-item-title Статья 1 желательно не&nbsp;больше 30-50 знаков
+					p.text Краткое описание статьи Всего одино предложение
+					a(href="#article").btn.modalWindowLink Подробнее
+				.article-item
+					h5.article-item-title Статья 1 желательно не&nbsp;больше 30-50 знаков
+					p.text Краткое описание статьи Всего одино предложение
+					a(href="#article").btn.modalWindowLink Подробнее
+
+
+	section.section.section-contest
+		.section-inner
+			.col-1
+				h5 С 15 ноября по 15 июня
+				.section-title участвуй в&nbsp;конкурсе!
+					span.red #tobe_fit
+				a.btn(href='#') О конкурсе
+			.col-2
+				.col-2-inner
+					h5 Ежемесячно абонемент на год в&nbsp;спортклуб
+				.col-2-inner
+					h5 Будь активным и выигрывай поездку в&nbsp;фитнес-тур от To be!
+				.big-title Мы верим в&nbsp;тебя!
+		.section-contest-slider.image-duotone-list.clearfix
+			a.item(href="#instagram",  data-video="http://scontent-frt3-1.cdninstagram.com/t50.2886-16/15041647_1306043939447978_9211262556952330240_n.mp4").modalWindowLink.video
+				img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+				img(src="i/photo-demo.jpg")
+				.like-counter 120
+			a.item(href="#instagram", data-image="https://cdn-images-1.medium.com/max/2000/1*-YdfGc4M-DOTZHeGWOQyWg.png").modalWindowLink
+				img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+				img(src="i/photo-demo.jpg")
+				.like-counter 120
+			a.item(href="#instagram",  data-video="http://scontent-frt3-1.cdninstagram.com/t50.2886-16/15041647_1306043939447978_9211262556952330240_n.mp4").modalWindowLink.video
+				img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+				img(src="i/photo-demo.jpg")
+				.like-counter 120
+			a.item(href="#instagram", data-image="https://cdn-images-1.medium.com/max/2000/1*LKV2bIbUKP99HfW-VfXYIA.jpeg").modalWindowLink
+				img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+				img(src="i/photo-demo.jpg")
+				.like-counter 120
+			a.item(href="#instagram",  data-video="http://scontent-frt3-1.cdninstagram.com/t50.2886-16/15041647_1306043939447978_9211262556952330240_n.mp4").modalWindowLink.video
+				img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+				img(src="i/photo-demo.jpg")
+				.like-counter 120
+			a.item(href="#instagram", data-image="https://cdn-images-1.medium.com/max/800/1*po8RNzZscRyqY6JDYcH__A.jpeg").modalWindowLink
+				img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+				img(src="i/photo-demo.jpg")
+				.like-counter 120
+			a.item(href="#instagram",  data-video="http://scontent-frt3-1.cdninstagram.com/t50.2886-16/15041647_1306043939447978_9211262556952330240_n.mp4").modalWindowLink.video
+				img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+				img(src="i/photo-demo.jpg")
+				.like-counter 120
+
+	section.section.section-product-pluses
+		.section-inner
+			.product-pack
+			.block-pluses
+				.block-pluses-item.n1
+					i.icon.checkmark.r
+					h5 Качество
+					p.text Разработан и&nbsp;произведен в&nbsp;современной лаборатории одного из&nbsp;крупнейших в&nbsp;России производителей молока
+				.block-pluses-item.n2
+					i.icon.checkmark.l
+					h5 Натуральность
+					p.text Содержит 30 граммов качественного молочного белка, обогащённого мицелярным казеином.
+				.block-pluses-item.n3
+					i.icon.checkmark.r
+					h5 Вкусы
+					p.text Ванильное мороженое, клубника со&nbsp;сливками, шоколад
+				.block-pluses-item.n4
+					i.icon.checkmark.l
+					h5 Удобство
+					p.text Больше не нужно носить с&nbsp;собойшейкер
+					p Дневная порция протеина в&nbsp;компактной упаковке 250 мл
+					p Не требует охлаждения
+			a.logo-tetrapak(href="http://www.tetrapak.com/ru" target="_blank" title="Tetra Pak") Tetra Pak
+
+	section.section.landing-flavors#products-block
+		.section-inner
+			a.logo-tetrapak(href="http://www.tetrapak.com/ru" target="_blank" title="Tetra Pak") Tetra Pak
+			.landing-flavors-bottle.bottle-1(href="#", data-order="1")
+			.landing-flavors-bottle.bottle-2(href="#", data-order="2")
+			.landing-flavors-bottle.bottle-3.active(href="#", data-order="3")
+
+			.landing-flavors-info-tabs
+				.landing-flavors-info.active(data-order="1")
+					h2.section-title ваниль
+					.description
+						p Коктейль молочный ультрапастеризованный, обогащенный белком, со вкусом ванильного мороженого. Массовая доля жира 0,1%
+						.subtitle Состав:
+						p молоко обезжиренное, изолят молочного белка (обогащен мицеллярным казеином), молоко сухое обезжиренное, ароматизаторы пищевые: «Ваниль» и «Сливочный пломбир», подсластитель «Сукралоза». Масса нетто 250г.
+						table.composition
+							tr
+								th
+									.subtitle Пищевая ценность
+								th
+									.subtitle 100г.
+								th
+									.subtitle 250г.
+							tr
+								td Белок
+								td 12 гр.
+								td 30 гр.
+							tr
+								td Углеводы
+								td 5,6 гр.
+								td 14,0 гр.
+							tr
+								td Жир
+								td 0,1 гр.
+								td 0,25 гр.
+							tr
+								td Энергетическая ценность
+								td 296,0 кДж
+								td 740,0 кДж
+
+							tr
+								td (калорийность)
+								td (71,0ккал)
+								td (178 ккал)
+					a(href="#").btn.buy
+						i.icon.cart
+						| Заказать
+
+				.landing-flavors-info(data-order="2")
+					h2.section-title шоколад
+					.description
+						p Коктейль молочный ультрапастеризованный, обогащенный белком, шоколадный. Массовая доля жира 0,2%
+						.subtitle  Состав:
+						p молоко обезжиренное, изолят молочного белка (обогащен мицеллярным казеином), молоко сухое обезжиренное, какао-порошок, стабилизатор (целлюлоза, камедь целлюлозы, хлорид кальция), ароматизатор пищевой «тип Шоколад», подсластитель «Сукралоза». Масса нетто 250г.
+						table.composition
+							tr
+								th
+									.subtitle Пищевая ценность
+								th
+									.subtitle 100г.
+								th
+									.subtitle 250г.
+							tr
+								td Белок
+								td 12 гр.
+								td 30 гр.
+							tr
+								td Углеводы
+								td 5,8 гр.
+								td 14,5 гр.
+							tr
+								td Жир
+								td 0,2 гр.
+								td 0,5 гр.
+							tr
+								td Энергетическая ценность
+								td 303,0 кДж
+								td 758,0 кДж
+							tr
+								td (калорийность)
+								td (72,0ккал)
+								td (180 ккал)
+					a(href="#").btn.buy
+						i.icon.cart
+						| Заказать
+
+				.landing-flavors-info(data-order="3")
+					h2.section-title клубникa
+					.description
+						p Коктейль молочный ультрапастеризованный, обогащенный белком, со вкусом клубники со сливками. Массовая доля жира 0,1%
+						.subtitle Состав:
+						p молоко обезжиренное, изолят молочного белка (обогащен мицеллярным казеином), молоко сухое обезжиренное, ароматизаторы пищевые: «Сливочный», «Клубника», подсластитель «Сукралоза». Масса нетто 250г.
+						table.composition
+							tr
+								th
+									.subtitle Пищевая ценность
+								th
+									.subtitle 100г.
+								th
+									.subtitle 250г.
+							tr
+								td Белок
+								td 12 гр.
+								td 30 гр.
+							tr
+								td Углеводы
+								td 5,6 гр.
+								td 14,0 гр.
+							tr
+								td Жир
+								td 0,1 гр.
+								td 0,25 гр.
+							tr
+								td Энергетическая ценность
+								td 296,0 кДж
+								td 740,0 кДж
+							tr
+								td (калорийность)
+								td (71,0ккал)
+								td (178 ккал)
+					a(href="#").btn.buy
+						i.icon.cart
+						| Заказать

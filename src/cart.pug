@@ -1,0 +1,58 @@
+extends layouts/default
+
+block content
+	section.section
+		.section-inner
+			.modalWindow.not-really-modalWindow#cart.full-width
+				.modalWindow-content
+					.modalWindow-title Корзина
+					.right
+						.table-title.n1 Количество<br>упаковок
+						.table-title.n2 В упаковке 24 пачки<br>Цена за упаковки
+					table.products-list
+						tr
+							td.preview(width='28%')
+								img(src="i/packs.png" alt="")
+							td(width="30%") Ваниль
+								.subline 24 пачки
+							td(width="20%")
+								.product-quantity
+									a(href="#").btn.round
+										i.icon.minus
+									span.quantity 2
+									a(href="#").btn.round
+										i.icon.plus
+							td(width="20%") 6 240
+								span.currency ₽
+							td
+								a(href="#").remove-item
+									i.icon.delete
+						tr
+							td.preview(width='28%')
+								img(src="i/packs.png" alt="")
+							td(width="30%") Шоколад
+								.subline 24 пачки
+							td(width="20%")
+								.product-quantity
+									a(href="#").btn.round
+										i.icon.minus
+									span.quantity 2
+									a(href="#").btn.round
+										i.icon.plus
+							td(width="20%") 6 240
+								span.currency ₽
+							td
+								a(href="#").remove-item
+									i.icon.delete
+					.order-info.clearfix
+						.total
+							p Итого:
+							p
+								span.red 3 
+								| товара на сумму
+						.price 9 360
+							span.red ₽
+						input(type="submit", value="оформить заказ").btn.order
+					.clear
+
+				

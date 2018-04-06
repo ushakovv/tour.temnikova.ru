@@ -1,0 +1,15 @@
+doctype html
+html
+	block head
+		include head
+
+	block body
+	body(class=bodyClass)
+		.page-wrap
+			include header
+			block content
+
+		block foot
+			include foot
+
+		include chat

@@ -1,0 +1,36 @@
+{
+    "name": "iiifx-production/yii2-ide-autocomplete",
+    "type": "extension",
+    "description": "Yii2 Autocomplete Helper",
+    "keywords": [
+        "ide",
+        "autocomplete",
+        "helper"
+    ],
+    "homepage": "https://github.com/iiifx-production/yii2-autocomplete-helper",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Vitaliy IIIFX Khomenko",
+            "email": "iiifx@yandex.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "yiisoft/yii2": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "iiifx\\Yii2\\Autocomplete\\": "source/"
+        }
+    },
+    "bin": [
+        "autocomplete"
+    ],
+    "scripts": {
+        "test": "phpunit tests"
+    }
+}

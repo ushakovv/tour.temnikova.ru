@@ -1,0 +1,175 @@
+.details {
+	background-color: #fff;
+
+    &__row {
+        vertical-align: middle;
+    }
+
+     &__item {
+        padding: 5px 0;
+
+        &_r {
+             padding-left: 5px;
+			 text-align: right;
+        }
+
+        &_r_b {
+             padding-left: 15px;
+        }
+
+         &_i {
+            padding-left: 5px;
+              padding-right: 5px;
+         }
+     }
+}
+
+.details__text {
+	padding: 34px;
+
+    @media (max-width: 780px) {
+        & {
+            padding: 34px 0;
+        }
+    }
+}
+
+.details__map {
+	height: 500px;
+}
+
+.details__city {
+	font-size: 32px;
+	margin-bottom: 15px;
+	position: relative;
+
+	&:before {
+		position: absolute;
+		left: -28px;
+		top: 10px;
+		content: '';
+		width: 16px;
+		height: 22px;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		background-image: url(city.png);
+	}
+
+     @media (max-width: 780px) {
+         & {
+            margin-left: 25px;
+        }
+     }
+}
+
+.details__date {
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+
+.details__address {
+	font-size: 18px;
+	margin-bottom: 25px;
+}
+
+.details__button {
+	position: relative;
+	font-size: 16px;
+	display: inline-block;
+	line-height: 40px;
+	margin-bottom: 5px;
+	text-decoration: none;
+	color: #000;
+	padding-left: 36px;
+	box-sizing: border-box;
+	cursor: pointer;
+
+	&:before {
+		content: '';
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		width: 27px;
+		height: 25px;
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 7px;
+	}
+
+	 @media (max-width: 690px) {
+         & {
+            padding-left: 30px!important;
+         }
+	 }
+}
+
+.details__button_go:before {
+	background-image: url(go.png);
+}
+
+.details__button_fav:before {
+	background-image: url(fav.png);
+}
+
+.details__button_cal:before {
+	background-image: url(cal.png);
+}
+
+.details__button_share:before {
+	height: 45px;
+	background-image: url(vk.png);
+}
+
+.details__buy {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+	&.details__buy_last {
+		border-bottom: 1px solid rgba(0,0,0,0.09);
+		margin-bottom: 30px;
+	}
+}
+
+.details__buy-image {
+	width: 30px;
+	height: auto;
+	display: block;
+}
+
+.details__buy-phone {
+	width: 100px;
+}
+
+.details__buy-name,
+.details__buy-phone,
+.details__buy-button_mobile,
+.details__buy-button {
+	font-size: 16px;
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+	
+}
+
+.details__buy-button_mobile {
+    display: none;
+
+    @media (max-width: 640px) {
+        & {
+            display: inline-block;
+        }
+    }
+}
+
+.details__buy-button:hover,
+.details__button:hover,
+.details__buy-button_mobile:hover,
+.details__button_active {
+	color: #eb1d6f;
+}
+
+.details__table {
+	width: 100%;
+}

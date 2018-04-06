@@ -1,0 +1,846 @@
+#modalsBg
+	display none
+	background #1f1f1f
+	opacity 0.9
+	position fixed
+	left 0
+	right 0
+	bottom 0
+	top 0
+	z-index 2000
+
+.modalWindow
+	background #101010
+	width 80rem
+	min-height 43rem
+	box-sizing border-box
+	padding 7rem 10rem
+	position fixed
+	left 50%
+	transform translate(-50%,-50%)
+	top 50%
+	z-index 3000
+	display none
+	border-radius 5px
+	max-height 100%
+	overflow-y auto
+	overflow-x-hidden
+	&.insta
+		padding 0
+		width auto
+		height auto
+		min-height 0
+		background transparent
+		overflow hidden
+		img
+			max-width 800px
+			height auto
+	&.full-width
+		width 100%
+		transform translate(0)
+		top 0
+		left 0
+		border-radius 0
+		.modalWindow-content
+			width 65rem
+			margin 0 auto
+	&-close
+		position absolute
+		right 25px
+		top 25px
+		width 50px
+		height 50px
+		background url($close) no-repeat center $red
+		background-size 15px
+		cursor pointer
+		border-radius 50%
+		z-index 3
+		transition all .4s ease
+		&:hover
+			background-image url($close-red)
+			background-color #fff
+	@media mobile
+		width 100%
+		padding 90px 30px 30px 30px
+		top 0
+		transform translate(0)
+		left 0
+		height auto
+		min-height 100%
+	.page-footer
+		padding-top 7rem
+		bottom -3rem
+	.modalWindow-title
+		font-size 40px
+		margin-bottom 30px
+		text-align center
+		font-weight 700
+		color #fff
+		@media mobile
+			font-size 30px
+	.products-list
+		border 1px solid #404040
+		border-width 1px 0
+		width 100%
+		color #fff
+		font-size 18px
+		font-weight 500
+		margin-bottom 30px
+		@media mobile
+			font-size 14px
+		td
+			vertical-align middle
+			padding 40px 0
+		.subline
+			color #bababa
+			font-size 14px
+			font-weight 300
+			margin-top 5px
+		.currency
+			color $red
+			margin-left 5px
+		a.remove-item
+			float right
+			&:hover .icon
+				background url($delete-red)
+				background-size 15px auto
+				background-repeat no-repeat
+
+	.product-quantity
+		position absolute
+		transform translateX(-50%)
+		left 50%
+		> a
+		> span
+			float left
+		@media mobile
+			transform scale(0.7) translateX(-50%)
+			width 100%
+		.quantity
+			font-size 20px
+			font-weight 700
+			color #fff
+			line-height 35px
+			margin 0 20px
+		.round
+			display flex
+			align-items center
+			white-space nowrap
+			flex-wrap nowrap
+			.icon
+				top 0
+				position relative
+				margin 0 auto
+			&:hover
+				.icon.plus
+					background url($plus-red)
+				.icon.minus
+					background url($minus-red)
+		.btn.order
+			margin-left 20px
+			padding 14px 30px 12px
+			text-transform uppercase
+
+	.products-list td
+		padding 20px 0
+		.product-quantity
+			margin-top -20px
+.not-really-modalWindow.full-width
+	background transparent
+	width 800px
+	margin 0 auto
+	min-height 43rem
+	box-sizing border-box
+	padding 180px 0 40px
+	position static
+	border-radius 0
+	max-height 100%
+	overflow auto
+	display block
+	z-index 1
+	display block
+	position static
+	@media mobile
+		width 100%
+		padding 0
+	.modalWindow-content
+		width 650px
+		margin 100px auto 0
+		@media mobile
+			width 100%
+
+
+.modalWindow
+	form
+		margin 0 auto
+		&.registration
+			width 47rem
+			@media mobile
+				width 100%
+		&.login
+			width 34rem
+			@media mobile
+				width 100%
+		input[type="submit"]
+			position relative
+			left 50%
+			transform translateX(-50%)
+
+
+.modalWindow#auth
+	input[type="submit"]
+		margin-top 3rem
+	a:hover
+		color $red
+
+.modalWindow#recover
+	p
+		font-size 12px
+		text-align center
+	a.modalWindowLink
+		font-size 14px
+		display inline-block
+		margin 2rem
+		&:hover
+			color $red
+
+
+.modalWindow#order
+	form
+		position relative
+		.label
+			color #fff
+			font-size 18px
+			font-weight 500
+			i
+				color #bababa
+				font-style italic
+				font-size 14px
+				padding-left 40px
+				@media mobile
+					display block
+					margin-top 8px
+					padding-left 0
+		.form-address-filed
+			width 100%
+			margin-top 35px
+			margin-bottom 35px
+			.w64
+				margin-right 11px
+				@media mobile
+					margin-right 0
+		.form-listside
+			width 100%
+			margin-bottom 37px
+			.phone-input
+				display inline-block
+				position relative
+				min-width 25px
+				font-size 14px
+				font-weight bold
+				color #bababa
+				@media mobile
+					width 100%
+				.phone-code
+					width 29.032258064%
+					padding-left 8px
+					font-size 1.4rem
+					font-weight normal
+					@media mobile
+						margin-right 5px
+				.phone-number
+					width 58.064516129%
+					font-size 1.4rem
+					font-weight normal
+					float right
+		.form-delivery
+			width 100%
+			.delivery-list
+				width 100%
+				border-top 1px solid #454545
+				border-bottom 1px solid #454545
+				tbody
+					tr:first-child
+						td
+							padding-top 30px
+					tr:last-child
+						td
+							padding-bottom 30px
+					tr
+						td
+							width 33.846153846%
+							padding-bottom 20px
+						td:nth-child(2)
+							padding-left 30px
+							font-size 14px
+							font-weight 500
+							color #a2a2a2
+						td:last-child
+							text-align right
+							font-size 18px
+							font-weight 500
+							color #fff
+							@media mobile
+								font-size 14px
+				.currency
+					color $red
+					margin-left 5px
+				label
+					position relative
+					display block
+					padding-left 36px
+					cursor pointer
+					font-size 18px
+					line-height 40px
+					font-weight bold
+					color #f4f4f4
+					@media mobile
+						font-size 14px
+						line-height 20px
+					&::before
+						content ""
+						position: absolute
+						width 18px
+						height 18px
+						top 10px
+						left 2px
+						border 1px solid #414141
+						border-radius 50%
+						cursor pointer
+						@media mobile
+							top 0
+					&::after
+						content ""
+						position: absolute
+						width 7px
+						height 7px
+						top 17px
+						left 9px
+						border-radius 50%
+						cursor pointer
+						background-color $red
+						display none
+						@media mobile
+							top 7px
+					&:hover
+						color $red
+						transition color .4s ease
+						&:before
+							border-color $gray
+				input:checked ~ label::after
+					display block
+		.order-info
+			width 100%
+			font-size 0
+			border-bottom 1px dashed #454545
+			li
+				display inline-block
+				width 33.33333%
+				font-size 18px
+				font-weight bold
+				color #fff
+				padding-top 35px
+				padding-bottom 35px
+				vertical-align top
+				@media mobile
+					font-size 14px
+					display block
+					width 200px
+					margin 0 auto
+					text-align center
+					padding-top 15px
+					padding-bottom 15px
+				.price
+					font-size 40px
+				.currency
+					color $red
+					margin-left 5px
+			li:nth-child(2)
+				@media mobile
+					padding-top 5px
+			li:last-child
+				p
+					@media mobile
+						font-size 30px
+		.order-confirmation
+			width 100%
+			font-size 0
+			margin-bottom 50px
+			@media mobile
+				margin-bottom 10px
+			li
+				display inline-block
+				padding-top 35px
+				padding-bottom 35px
+				vertical-align top
+				@media mobile
+					width 240px
+					display block
+					margin 0 auto
+					text-align center
+				label
+					position relative
+					top 8px
+					font-size 12px
+					font-weight normal
+					color #a6a6a6
+					span
+						position absolute
+						top 3px
+						left -40px
+						width 18px
+						height 18px
+						border 1px solid #404040
+						border-radius 3px
+						background-color transparent
+						cursor pointer
+						@media mobile
+							top -25px
+							left 20px
+							border 1px solid #a6a6a6
+						&::after
+							display none
+							content ""
+							position absolute
+							top 2px
+							left 3px
+							width 21px
+							height 5px
+							border 2px solid #101010
+							background-color #404040
+							transform rotate(-45deg)
+							z-index 20
+							@media mobile
+								border 2px solid #404040
+								background-color #a6a6a6
+						&::before
+							display none
+							content ""
+							position absolute
+							top 8px
+							left 1px
+							width 12px
+							height 5px
+							background-color #404040
+							transform rotate(45deg)
+							z-index 30
+							@media mobile
+								top 6px
+								left 0
+								background-color #a6a6a6
+					a
+						text-decoration underline
+						color #a6a6a6
+				input[type=checkbox]:checked ~ label .confirm-check-box::after,
+				input[type=checkbox]:checked ~ label .confirm-check-box::before
+					display block
+				input[type="submit"]
+					margin 0
+			li:first-child
+				padding-left 40px
+				margin-right 25px
+				font-size 1.4rem
+				@media mobile
+					margin-left auto
+					margin-right auto
+					padding-right 54px
+			li:nth-child(2)
+				margin-right 25px
+				font-size 1.4rem
+				text-align center
+				@media mobile
+					width 100%
+					margin-right 0
+					padding-top 10px
+					padding-bottom 10px
+			li:last-child
+				@media mobile
+					padding-top 10px
+		p
+			margin-bottom 20px
+		p.hint
+			color #bababa
+			font-size 14px
+			font-weight 100
+			line-height 25px
+			padding-right 20px
+		input[type="checkbox"]
+			margin-right 20px
+		input[type="submit"]
+			text-transform uppercase
+			margin 20px 0
+			left 0
+			transform translateX(0)
+
+
+.modalWindow#food-video
+	width 80%
+	padding 0
+	video
+		display: block
+		height: 100%
+		max-width: 100%
+		min-height: 100%
+		min-width: 100%
+	@media mobile
+		min-height 0
+		top 50%
+		left 50%
+		transform translate(-50%,-50%)
+
+.modalWindow#cart
+	.modalWindow-title
+	.table-title
+		text-align left
+		float left
+	.table-title
+		padding-top 8px
+		line-height 18px
+		@media mobile
+			display none
+	.table-title.n2
+		margin 0 17px 0 110px
+		@media mobile
+			margin 0 17px 20px
+	.product-quantity
+		transform translateX(5%)
+		@media mobile
+			left 50%
+			transform scale(.5) translateX(-55%)
+	table
+		border-bottom 0
+		td
+			border-bottom 1px solid #404040
+	td.preview
+		padding-right 20px
+		img
+			max-width 100%
+	.order-info
+		font-size 18px
+		color #fff
+		font-weight 500
+		margin-bottom 60px
+		p
+			margin-bottom 20px
+		.total
+			float left
+			@media mobile
+				float none
+		.price
+			font-size 40px
+			float left
+			margin 18px 0 0 120px
+			@media mobile
+				margin-left 0
+				float none
+			.red
+				margin-left 5px
+		.btn.order
+			float right
+			margin-top 15px
+			@media mobile
+				float none
+
+
+.modalWindow#contestWindow
+	text-align center
+	width auto
+	.modalWindow-content
+		width 100%
+		max-width 1100px
+		margin 0 auto
+	.btn
+		margin-bottom 50px
+	.modalWindow-header
+		.top-line
+			font-size 24px
+			line-height auto
+			font-weight 700
+			color #fff
+			margin-bottom 50px
+			@media mobile
+				margin 100px auto 20px
+			.red
+				text-transform uppercase
+		.main-title
+			font-size 40px
+			color #fff
+			font-weight 700
+			text-transform uppercase
+			margin-bottom 40px
+			@media mobile
+				font-size 25px
+			span
+				display block
+				position relative
+				margin-bottom 5px
+			.red
+				font-weight 900
+				font-size 90px
+				display block
+				letter-spacing 4px
+				margin-bottom -3px
+				@media mobile
+					font-size 60px
+					letter-spacing 2px
+			.line1
+				left -3px
+				letter-spacing 0.2px
+			.line2
+				left -5px
+				letter-spacing -0.2px
+	.contest-steps
+		margin-bottom 20px
+		li
+			display inline-block
+			vertical-align top
+			box-sizing border-box
+			width 33%
+			padding 0 5%
+			line-height 25px
+			font-size 14px
+			@media mobile
+				width 100%
+				margin-bottom 30px
+			&:first-child
+				padding-left 0
+			&:last-child
+				padding-right 0
+			b
+				font-weight 700
+				color #fff
+				&.red
+					color $red
+			.num
+				width 63px
+				height 63px
+				font-size 28px
+				line-height 63px
+				color #fff
+				text-align center
+				font-weight 700
+				background $red
+				margin 0 auto
+				border-radius 50%
+				margin-bottom 30px
+				@media mobile
+					margin-bottom 15px
+	.participant-table-title
+		font-size 24px
+		font-weight 700
+		color #fff
+		float left
+		margin-bottom 30px
+		.red
+			text-transform uppercase
+	.participant-filter
+		float right
+		position relative
+		top 4px
+		@media mobile
+			float none
+			top -10px
+		a
+			font-size 14px
+			font-weight 700
+			padding-right 23px
+			margin-left 40px
+			background url($arr-d) right center no-repeat
+			background-size 12px auto
+			@media mobile
+				margin 0 15px 0 0
+			&:hover
+				color $red
+			&.up
+				background-image url($arr-u)
+	.participant-table
+		clear both
+		display flex
+		flex-wrap wrap
+		justify-content space-between
+		margin-bottom 50px
+		li
+			margin-bottom 1.9rem
+			width: calc(100% * (1/3) - 10px - 1px);
+			@media mobile
+				width 100%
+			.item
+				width auto
+
+
+
+.modalWindow#article
+	.article-item-title
+		color #fff
+		font-size 24px
+		line-height auto
+		font-weight 700
+		padding 0 50px 30px 0
+	.article-item-text
+		max-height 350px
+		padding-bottom 50px
+		p
+			line-height 21px
+
+
+.chat-button
+	position fixed
+	bottom 100px
+	width 270px
+	right 0
+	transform translateX(160px)
+	transition transform 0.4s ease
+	font-size 14px
+	z-index 10
+	@media mobile
+		display none
+	&-top
+	&-bottom
+		display block
+		width 270px
+	&-top
+		background url('../i/chat.jpg') no-repeat 0 0 #29292b
+		height 116px
+		padding-left 110px
+		cursor pointer
+		.text
+			display inline-block
+			vertical-align top
+			box-sizing border-box
+			padding 30px 15px
+			color #fff
+			.name
+				font-weight bold
+				margin-bottom 3px
+			.status
+				font-weight 100
+				font-style italic
+				font-size 11px
+	&-bottom
+		background $red
+		height 80px
+		cursor pointer
+		position relative
+		.icon
+			width 190px
+			height inherit
+			background url($chat) no-repeat 38px center
+			background-size 35px auto
+			border-right 1px solid rgba(30,30,30,0.3)
+			display inline-block
+			vertical-align top
+			cursor pointer
+			button
+				display block
+				color #fff
+				font-size 14px
+				text-transform uppercase
+				background $red
+				border 0
+				width 100%
+				height 100%
+				font-weight 700
+				display none
+				cursor pointer
+				&:hover
+					background #fff
+					color $red
+		.modalWindow-close
+			top 0
+			right 0
+			width 79px
+			height 100%
+			border-radius 0
+	&.opened
+		transform translate(0)
+
+.chat-wrapper
+	display none
+	position fixed
+	right 270px
+	bottom 100px
+	width 530px
+	color #fff
+	font-weight 300
+	line-height 18px
+	margin-top -150px
+	font-size 14px
+	z-index 3000
+	.dialog
+		overflow auto
+		min-height 200px!important
+		background rgba(41,41,43,0.95)
+	.chat-message
+		position relative
+		padding 30px 20px 0
+		box-sizing border-box
+		&.answer
+			padding-left 60px
+			&:before
+				position absolute
+				left 20px
+				top 30px
+				display block
+				content ''
+				width 30px
+				height 30px
+				background url('../i/denis-chat.png') no-repeat center
+				background-size 200%
+		p:last-child
+				margin-bottom 0
+		hr
+			height 1px
+			background rgba(96,99,107,0.3)
+			border 0
+			margin 0
+	.chat-message-text
+		background #191919
+		padding 20px
+		margin-top -1px
+		position relative
+		.chat-title
+			font-size 30px
+			margin-bottom 30px
+			text-align center
+			font-weight 700
+			color #fff
+			@media mobile
+				font-size 20px
+		textarea
+			font-family $Roboto
+			display block
+			width 100%
+			border 1px solid rgba(255,255,255,0.2)
+			resize none
+			color #fff
+			background transparent
+			margin-bottom 20px
+			height 160px
+			box-sizing border-box
+			padding 20px
+			&:focus
+				outline none
+		input[type="submit"]
+			width 100%
+
+// #chat-auth
+// 	display block
+// 	.chat-message-text
+// 		background #191919
+// 		margin-top -1px
+// 		position relative
+// 		background-color #101010
+// 		textarea
+// 			font-family $Roboto
+// 			display block
+// 			width 100%
+// 			border 1px solid rgba(255,255,255,0.2)
+// 			resize none
+// 			color #fff
+// 			background transparent
+// 			margin-bottom 20px
+// 			box-sizing border-box
+// 			padding 20px
+// 			border-radius 10px
+// 			&:focus
+// 				outline none

@@ -1,0 +1,13 @@
+# PhpStrom
+.idea
+
+# Composer
+vendor
+composer.lock
+composer.phar
+
+# PHP_CodeCoverage
+code-coverage
+
+config
+index.php

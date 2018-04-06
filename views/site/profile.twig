@@ -1,0 +1,24 @@
+<div class="red-block">
+    <div class="inner-wrapper">
+        <h2>{{ model.getFullName() }}</h2>
+        <form class="reg-form cols2" action="{{  app.urlManager.createUrl(['site/profile']) }}" method="post" enctype="multipart/form-data">
+            <fieldset class="fieldset_smal"></fieldset>
+            <input type="hidden" name="{{ app.request.csrfParam }}" value="{{ app.request.csrfToken }}" />
+            <fieldset>
+                <legend>Личные данные</legend>
+                <div class="input"><input class="first_name" type="text" placeholder="Имя" value="{{ model['first_name'] }}" name="User[first_name]"></div>
+                <div class="input right"><input class="last_name" type="text" placeholder="Фамилия" value="{{ model['last_name'] }}" name="User[last_name]"></div>
+                <div class="input"><input class="email" type="email" placeholder="E-mail" value="{{ model['email'] }}" name="User[email]" disabled></div>
+            </fieldset>
+            <hr>
+            <div class="toggle">
+                <div class="action">
+                    <input type="submit" value="Сохранить изменения" >
+                </div>
+                <a href="{{ app.urlManager.createUrl(['site/changepass']) }}">Изменить пароль</a></li>
+                </ul>
+            </div>
+
+        </form>
+    </div>
+</div>

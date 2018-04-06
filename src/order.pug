@@ -1,0 +1,121 @@
+extends layouts/default
+
+block content
+	section.section
+		.section-inner
+			.modalWindow.not-really-modalWindow#order.full-width
+				.modalWindow-content
+					.modalWindow-title Оформление заказа
+					table.products-list
+						tr
+							td(width="50%") Ваниль
+								.subline 24 пачки
+							td(width="20%")
+								.product-quantity
+									a(href="#").btn.round
+										i.icon.minus
+									span.quantity 2
+									a(href="#").btn.round
+										i.icon.plus
+							td(width="20%") 6 240
+								span.currency ₽
+							td(width="10%")
+								a(href="#").remove-item
+									i.icon.delete
+						tr
+							td(width="50%") Шоколад
+								.subline 24 пачки
+							td(width="20%")
+								.product-quantity
+									a(href="#").btn.round
+										i.icon.minus
+									span.quantity 2
+									a(href="#").btn.round
+										i.icon.plus
+							td(width="20%") 6 240
+								span.currency ₽
+							td(width="10%")
+								a(href="#").remove-item
+									i.icon.delete
+
+					form
+						.form-address-filed
+							p.label Адрес доставки
+							.input.w28
+								input(type="text", placeholder="Индекс")
+							.input.w69.right
+								input(type="text", placeholder="Город")
+							.input.w64
+								input(type="text", placeholder="Улица")
+							.input.w19
+								input(type="text", placeholder="Дом")
+							.input.w11.right
+								input(type="text", placeholder="Кв")
+						.form-listside
+							p.label Данные покупателя
+								i для курьера и сообщений о статусе заказа
+							.input.w48-9
+								input(type="text", placeholder="Имя")
+							.input.w48-9.right
+								input(type="email", placeholder="Электронная почта")
+							.phone-input.w48-9 +7
+								.input.phone-code
+									input(type="text", placeholder="")
+								.input.phone-number
+									input(type="text", placeholder="")
+								.clear
+						.form-delivery
+							p.label Доставка
+							table.delivery-list
+								tr
+									td
+										input(type="radio" name="chsn-delivery" value="1" id="btn-1" checked)
+										label(for="btn-1") Boxberry Курьер
+									td Сегодня
+									td 8 500
+											span.currency ₽
+								tr
+									td
+										input(type="radio" name="chsn-delivery" value="2" id="btn-2")
+										label(for="btn-2") Pony express
+									td 3-4 рабочих дня
+									td 8 500
+										span.currency ₽
+								tr
+									td
+										input(type="radio" name="chsn-delivery" value="3" id="btn-3")
+										label(for="btn-3") Сityexpress
+									td 3-4 рабочих дня
+									td 8 500
+										span.currency ₽
+
+							ul.order-info
+								li
+									p
+										span.red 3
+										| товара на сумму
+										.order-item-price 8 500
+											span.currency ₽
+								li
+									p Сумма за доставку
+									.order-item-price 860
+										span.currency ₽
+								li
+									p Итого
+									span.price 9 360
+										span.currency ₽
+
+							ul.order-confirmation
+								li
+									input(name="order-agree" type="checkbox" id="confirm-check")
+									label(for="confirm-check")
+										span.confirm-check-box
+										| Я согласен<br> с
+										a(href="#") правилами доставки и оплаты
+								li.input.w24
+									div.error Неверный код
+									input(type="text", placeholder="Код на скидку")
+								li
+									input(type="submit", value="отправить заказ").btn
+
+					.clear

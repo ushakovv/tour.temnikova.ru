@@ -1,0 +1,164 @@
+<div class="popup-overlay">
+    <div class="popup" data-name="photo">
+        <div class="popup__close"></div>
+        <div class="popup__body"></div>
+        <script type="text/html">
+            <div class="slider" data-js="slider" data-slides-to-show="1">
+                <img class="image" src="{{'{{'}} imageUrl {{'}}'}}" alt="">
+            </div>
+        </script>
+    </div>
+    <div class="popup" data-name="ponominalu-list">
+        <div class="popup__close"></div>
+        <div class="popup__body"></div>
+        <div id="ponominalu_widget"></div>
+        <script type="text/html"></script>
+    </div>
+    <div class="popup-overlay-second"></div>
+    <div class="popup popup_level_t" data-name="ponominalu">
+        <div class="popup__close"></div>
+        <div class="popup__body"></div>
+        <script type="text/html">
+            {%
+                set form = active_form_begin({
+                    action: '/site/order',
+                    method: 'POST',
+                    options: {
+                        class: 'form form_pono',
+                        name: 'ticket'
+                    }
+                })
+            %}
+                <p class="form__title">ДЛЯ УСКОРЕННОГО ОФОРМЛЕНИЯ БИЛЕТА УКАЖИТЕ СВОИ ДАННЫЕ</p>
+                {{ form.field(tickets, 'name', {template: '{input}\n{error}', inputOptions: {placeholder: 'Введите Ваше имя и фамилию', class: 'form__input', value: userData.name}}).textInput().label(false) | raw}}
+                {{ form.field(tickets, 'email', {template: '{input}\n{error}', inputOptions: {placeholder: 'Укажите Ваш e-mail', class: 'form__input', value: userData.mail}}).textInput().label(false)  | raw}}
+                {{ form.field(tickets, 'phone', {template: '{input}\n{error}', inputOptions: {placeholder: 'Введите номер телефона', class: 'form__input', value: userData.phone}}).textInput().label(false)  | raw}}
+                {{ html.submitButton('ПРОДОЛЖИТЬ', {class: 'form__input form__submit'}) | raw }}
+                {{ form.field(tickets, 'e_id', {inputOptions: {value: '{{ id }}'}}).hiddenInput().label(false) | raw}}
+                <p>В любой момент вы можете отменить покупку</p>
+            {{ active_form_end() }}
+        </script>
+    </div>
+    <div class="popup" data-name="product">
+        <div class="popup__close"></div>
+        <div class="popup__body"></div>
+        <script type="text/html">
+            <div class="product">
+                <img class="image" src="{{'{{'}} imageUrl {{'}}'}}" alt="">
+                <a class="tour-map__details-more product__btn" href="{{'{{'}} productUrl {{'}}'}}" alt="" target="_blank">Купить</a>
+            </div>
+        </script>
+    </div>
+    <div class="popup" data-name="video">
+        <div class="popup__close"></div>
+        <div class="popup__body"></div>
+        <script type="text/html">
+            <iframe src="{{'{{'}} videoUrl {{'}}'}}" class="video"></iframe>
+            <br>
+            <div class="videos__city videos__city_popup">{{'{{'}} city {{'}}'}}</div>
+            <div class="videos__date videos__date_popup">{{'{{'}} date {{'}}'}}</div>
+        </script>
+    </div>
+
+    <div class="popup" data-name="details">
+        <div class="popup__close"></div>
+        <div class="popup__body"></div>
+        <script type="text/html">
+            <div class="grid details" data-events-id="{{'{{'}} point.id {{'}}'}}">
+                <div class="grid__col grid__col_6 grid__m-col_12">
+                    <div class="details__text">
+                        <div class="details__city">{{'{{'}} point.name {{'}}'}}</div>
+                        <div class="details__date">{{'{{'}} point.date {{'}}'}}</div>
+                        <div class="details__address">{{'{{'}} point.address {{'}}'}}</div>
+                        <table class="details__table">
+                            {{'{{#'}}cashes {{'}}'}}
+                            <tr valign="top" class="details__row">
+                                <td class="details__item">
+                                    <img src="{{'{{'}} logo {{'}}'}}" alt="" class="details__buy-image ">
+                                </td>
+                                <td class="details__item details__item_i">
+                                    <div class="details__buy-name ">{{'{{'}} front_name {{'}}'}}</div>
+                                </td>
+                                <td class="details__item details__item_i">
+                                    <div class="details__buy-phone ">{{'{{'}} phone {{'}}'}}</div>
+                                </td>
+                                <td class="details__item details__item_r">
+                                    {{'{{#'}}normal {{'}}'}}
+                                        {{'{{#'}} link {{'}}'}}
+                                            <a href="{{'{{'}} link {{'}}'}}" target="_blank" class="details__buy-button details__item_r_b">Купить</a>
+                                        {{'{{/'}} link {{'}}'}}
+                                    {{'{{/'}}normal {{'}}'}}
+
+                                    {{'{{#'}}ponominalu {{'}}'}}
+                                    <button onclick="popup('ponominalu', {'id': {{'{{'}} point.id {{'}}'}}});tickets();" class="tour-map__buy_tickets "></button>
+                                    <p class="details__buy-button_mobile " onclick="popup('ponominalu', {'id': {{'{{'}} point.id {{'}}'}}});tickets();">Купить</p>
+                                    {{'{{/'}}ponominalu {{'}}'}}
+                                </td>
+                            </tr>
+                            {{'{{/'}}cashes {{'}}'}}
+                        </table>
+                        {{'{{#'}}point.vk_event {{'}}'}}
+                        <div class="details__buy">
+                            <a href="//vk.com/{{'{{'}} point.vk_event {{'}}'}}" target="_blank" class="details__button details__button_go">Я пойду</a>
+                            <a href="//vk.com/{{'{{'}} point.vk_event {{'}}'}}" target="_blank" class="details__button details__button_fav">Интересуюсь</a>
+                            <span class="details__button details__button_share" data-js="share">Поделиться</span>
+                        </div>
+                        {{ '{{/' }} point.vk_event {{ '}}' }}
+                        <div class="drop-menu drop-menu_landscape" data-id="share-details"></div>
+                    </div>
+                </div>
+                <div class="grid__col grid__col_6 grid__m-col_12 map_right_p">
+                    <div class="details__map map" data-js="map" data-x="{{'{{'}} point.map_x {{'}}'}}" data-y="{{'{{'}} point.map_y {{'}}'}}" data-zoom="16"></div>
+                </div>
+            </div>
+        </script>
+    </div>
+
+    <div class="popup" data-name="report">
+        <div class="popup__close"></div>
+        <div class="popup__body"></div>
+        <script type="text/html">
+            <div class="report">
+                <div class="report__city">Тверь</div>
+                <div class="report__date">23 число 2000</div>
+                <div class="gallery" data-js="gallery">
+                    <div class="gallery__content"></div>
+                    <div class="gallery__slider">
+                        <div class="slider" data-js="slider" data-slides-to-show="7" data-slides-to-show-mobile="3">
+                            <div class="gallery__photo">
+                                <img src="content/photo.jpg" data-url="https://yandex.ru/images/today?size=1920x1080">
+                            </div>
+                            <div class="gallery__video">
+                                <img src="content/photo.jpg" data-url="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4">
+                            </div>
+                            <div class="gallery__photo">
+                                <img src="content/photo.jpg" data-url="https://yandex.ru/images/today?size=1920x1080">
+                            </div>
+                            <div class="gallery__video">
+                                <img src="content/photo.jpg" data-url="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4">
+                            </div>
+                            <div class="gallery__photo">
+                                <img src="content/photo.jpg" data-url="https://yandex.ru/images/today?size=1920x1080">
+                            </div>
+                            <div class="gallery__video">
+                                <img src="content/photo.jpg" data-url="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4">
+                            </div>
+                            <div class="gallery__photo">
+                                <img src="content/photo.jpg" data-url="https://yandex.ru/images/today?size=1920x1080">
+                            </div>
+                            <div class="gallery__video">
+                                <img src="content/photo.jpg" data-url="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4">
+                            </div>
+                            <div class="gallery__photo">
+                                <img src="content/photo.jpg" data-url="https://yandex.ru/images/today?size=1920x1080">
+                            </div>
+                            <div class="gallery__video">
+                                <img src="content/photo.jpg" data-url="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+    </div>
+</div>

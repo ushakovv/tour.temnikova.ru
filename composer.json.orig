@@ -1,0 +1,7 @@
+{
+    "require": {
+        "arturoliveira/yii2-excelview": "*",
+        "vova07/yii2-imperavi-widget": "*",
+        "asofter/yii2-imperavi-redactor": "*"
+    }
+}

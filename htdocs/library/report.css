@@ -1,0 +1,25 @@
+.report {
+	
+}
+
+.report__city {
+	font-size: 32px;
+	margin-bottom: 5px;
+	text-align: center;
+	color: #fff;
+
+	@media (max-width: 768px) {
+		font-size: 24px;
+	}
+}
+
+.report__date {
+	font-size: 18px;
+	margin-bottom: 10px;
+	text-align: center;
+	color: #fff;
+
+	@media (max-width: 768px) {
+		font-size: 16px;
+	}
+}

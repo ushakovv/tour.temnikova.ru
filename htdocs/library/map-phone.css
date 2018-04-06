@@ -1,0 +1,10 @@
+.map-phone {
+	display: none;
+	padding: 0 15px 30px;
+	width: 100%;
+	box-sizing: border-box;
+
+	@media (max-width: 768px) {
+		display: block;
+	}
+}

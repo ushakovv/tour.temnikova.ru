@@ -1,0 +1,628 @@
+html
+	font-size 10px
+	font-family $Roboto
+	font-weight 300
+
+	@media screen and (min-width: 0px) {
+		font-size:7.1px;
+	}
+	@media screen and (min-width: 769px) {
+		font-size:8px;
+	}
+	@media screen and (min-width: 1000px) {
+		font-size 0.71vw;
+	}
+	// @media screen and (max-width: 1000px) {
+	// 	body {
+	// 		min-width 1000px;
+	// 	}
+	// }
+	@media screen and (min-width: 1500px) {
+		font-size:10px;
+	}
+/*
+html
+	background url('../i/1.jpg') no-repeat center 0
+body
+	opacity 0.5
+*/
+body
+	font-size 14px
+	background-color #101010
+	background-image url('../i/bg-gradient.png')
+	background-repeat no-repeat
+	background-position center
+	background-size auto
+	color rgba(255,255,255,0.8)
+	// min-width 1000px
+	overflow-x hidden
+	overflow-y scroll
+
+
+body.homepage
+	font-size 1.4rem
+	background-image none
+
+html, body
+	height 100%
+	@media mobile
+		overflow-x hidden
+
+@media mobile
+	body
+	body.homepage
+		min-width 0!important
+		width 100%
+		font-size 12px
+
+.page-wrap
+	min-height 100%
+	min-height calc(100vh - 102px)
+	margin-bottom -120px
+
+.page-wrap:after
+	content ""
+	display block
+
+.page-footer, .page-wrap:after
+	height 120px
+	@media mobile
+		height 160px
+
+.clear
+	clear both
+.clearfix:after
+	content ""
+	display block
+	clear both
+
+.page__wrapper
+	min-height 100%
+	position relative
+
+* html .page__wrapper
+	height 100%
+
+.container
+	//width 132rem
+	margin 0 auto
+	position relative
+
+.t-right
+	text-align right
+.t-center
+	text-align center
+
+.clear
+	clear both
+button
+	outline 0!important
+a
+	color #fff
+	text-decoration none
+	&:hover,
+	&:focus,
+	&:active
+		outline none
+	&:hover
+		transition color .4s ease
+
+p
+	margin 0 0 18px
+	&.text
+		line-height 2.5rem
+
+::-webkit-input-placeholder {color:#fff; opacity: 0.9}
+::-moz-placeholder					{color:#fff; opacity: 0.9}
+:-moz-placeholder					 {color:#fff; opacity: 0.9}
+:-ms-input-placeholder			{color:#fff; opacity: 0.9}
+
+.w11
+	width 11.84616%
+.w13
+	width 13.84616%
+.w14
+	width 14.84616%
+.w18
+	width 18%
+.w19
+	width 19.5%
+.w24
+	width 24.61538461%
+.w25
+	width 25%
+.w26
+	width 26.15384615%
+.w28
+	width 28.8%
+.w30
+	width 30%
+.w35
+	width 35%
+.w45
+	width 45%
+.w47
+	width 47.69230769%
+.w48
+	width 48%
+.w48-9
+	width 48.992308%
+.w55
+	width 55%
+.w60
+	width 60%
+.w64
+	width 64.615384%
+.w69
+	width 69.23076%
+.w72
+	width 72%
+.w80
+	width 80%
+.w100
+	width 100%
+.left
+	float left
+.right
+	float right
+
+
+
+.row
+	display flex
+	flex-wrap wrap
+	justify-content space-between
+	.col2-3
+		width 66.66666666%
+	.col1-3
+		width 33.33333333%
+
+.section-title
+	font-size 4rem
+	line-height 4.5rem
+	font-weight 900
+	text-transform uppercase
+	margin-bottom 2.6rem
+	color #fff
+	@media mobile
+		font-size 30px
+		font-weight 700
+
+h4
+	font-size 4rem
+	font-weight bold
+	margin-bottom 2rem
+	text-transform uppercase
+	color #fff
+
+h5
+	font-size 2.4rem
+	font-weight bold
+	margin-bottom 2.5rem
+	color #fff
+
+/* Slider */
+.slick-slider
+	position: relative
+	display: block
+	box-sizing: border-box
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+	-ms-touch-action: pan-y
+	touch-action: pan-y
+	-webkit-tap-highlight-color: transparent
+.slick-list
+	position: relative
+	overflow: hidden
+	display: block
+	margin: 0
+	padding: 5px 0
+	&:focus
+		outline: none
+	&.dragging
+		cursor: pointer
+		cursor: hand
+.slick-slider .slick-track,
+.slick-slider .slick-list
+	-webkit-transform: translate3d(0, 0, 0)
+	-moz-transform: translate3d(0, 0, 0)
+	-ms-transform: translate3d(0, 0, 0)
+	-o-transform: translate3d(0, 0, 0)
+	transform: translate3d(0, 0, 0)
+.slick-track
+	position: relative
+	left: 0
+	top: 0
+	display: flex
+	&:before,
+		&:after
+		content: ""
+		display: table
+	&:after
+		clear: both
+	.slick-loading &
+		visibility: hidden
+.slick-slide
+	height: auto
+	height: 100%
+	min-height: 1px
+	[dir="rtl"] &
+		float: right
+	img
+		display: block
+	&.slick-loading img
+		display: none
+	display: none
+	&.dragging img
+		pointer-events: none
+	.slick-initialized &
+		display: block
+		height auto
+	.slick-loading &
+		visibility: hidden
+	.slick-vertical &
+		display: block
+		height: auto
+		border: 1px solid transparent
+.slick-arrow.slick-hidden
+	display: none
+
+.more-link
+	font-weight bold
+	display block
+	&:hover
+		color $red
+		.icon
+			background url($arr-r-white)
+a .arr-r
+		position relative
+		margin-left 15px
+		top 1px
+a:hover .arr-r
+	background url($arr-r-white)
+
+.red
+	color $red
+.btn
+	display inline-block
+	background $red
+	padding 12px 30px 14px
+	font-weight 700
+	border-radius 50px
+	transition all ease .5s
+	font-size 14px
+	&:hover
+		background #fff
+		color $red
+	&.buy
+		position relative
+		text-transform uppercase
+		padding 11px 23px 17px
+		&:hover
+			color #000
+	.icon
+		position relative
+		top 4px
+		margin-right 14px
+	&:hover .icon
+		background url($cart-red)
+	&.round
+		padding 0
+		width 40px
+		height 40px
+		text-align center
+
+.sandwich
+	display none
+	width: 55px
+	height: 55px
+	position: absolute
+	right 0
+	top -2px
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	cursor: pointer;
+	z-index:300;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	@media mobile
+		display block
+
+.sandwich span
+	display: block;
+	position: absolute;
+	height: 3px;
+	width: 28px;
+	background: #fff;
+	opacity: 1;
+	left: 13px;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+
+.sandwich.open span {background: #fff}
+
+.sandwich span:nth-child(1) {top: 15px;}
+.sandwich span:nth-child(2),.sandwich span:nth-child(3) { top: 23px;}
+.sandwich span:nth-child(4) {top: 31px;}
+
+.sandwich.open span:nth-child(1)
+	top: 18px;
+	width: 0%;
+	left: 50%;
+
+.sandwich.open span:nth-child(2)
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+
+.sandwich.open span:nth-child(3)
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+
+.sandwich.open span:nth-child(4)
+	top: 18px;
+	width: 0%;
+	left: 50%;
+
+input[type="text"]
+input[type="email"]
+input[type="password"]
+	outline 0
+	background transparent
+	border 1px solid rgba(255,255,255,0.2)
+	box-sizing border-box
+	padding 12px 30px
+	border-radius 50px
+	margin-bottom 20px
+	color #fff
+	width 100%
+
+.input
+	position relative
+	display inline-block
+	@media mobile
+		width 100%
+.input .error
+	position absolute
+	background $red
+	color #fff
+	padding 6px 20px
+	left 50%
+	transform translate(-50%,-100%)
+	margin-top -10px
+	&:after
+		content ''
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 10px 10px 0 10px;
+		border-color: $red transparent transparent transparent
+		position absolute
+		bottom -9px
+		left 50%
+		margin-left -10px
+
+input[type="radio"]
+input[type="checkbox"]
+	position absolute
+	opacity 0
+	left 0
+	padding 0
+
+.form-checkbox
+.form-radio-group
+	margin-bottom 3rem
+	position relative
+
+.form-checkbox
+	label
+		display block
+		position relative
+		padding-left 40px
+		font-size 12px
+		line-height 18px
+		a
+			color inherit
+			border-bottom 1px solid #bababa
+			&:hover
+				border-bottom 0
+
+		&:before
+			display block
+			position absolute
+			left 0
+			top -1px
+			content ''
+			width 20px
+			height 20px
+			border 1px solid rgba(255,255,255,0.2)
+			border-radius 4px
+	input[type="checkbox"]:checked + label:after
+		display block
+		position absolute
+		left 1px
+		top 1px
+		content ''
+		width 20px
+		height 20px
+		background url($checkbox) no-repeat center
+		background-size 12px
+
+.form-radio-group-item
+	display inline-block
+	padding-left 30px
+	position relative
+	margin-right 15px
+	label
+		color #fff
+		cursor pointer
+		&:before
+			display block
+			position absolute
+			left 0
+			top -4px
+			content ''
+			width 20px
+			height 20px
+			border 1px solid rgba(255,255,255,0.2)
+			border-radius 50%
+	input[type="radio"]:checked + label:after
+		display block
+		position absolute
+		left 7px
+		top 4px
+		content ''
+		width 8px
+		height 8px
+		background $red
+		border-radius 50%
+
+input[type="submit"]
+	border 0
+	color #fff
+	text-transform uppercase
+	cursor pointer
+
+.btn-play
+	display block
+	background url($play) no-repeat center $red
+	background-size 1.7rem 1.9rem
+	width 8rem
+	height 8rem
+	border-radius 50%
+	transition background-color ease 0.6s background-image ease 0.6s
+	&:hover
+		background-image url($play-red)
+		background-color #fff
+
+.slick-arrow
+	border 0
+	background transparent
+	font-size 0
+	//arrows
+	&.slick-prev
+	&.slick-next
+		display block
+		background url($slide-arr-l) no-repeat center
+		background-size 12px 20px
+		width 60px
+		height 60px
+		position absolute
+		top 50%
+		left -120px
+		margin-top -120px
+		cursor pointer
+		outline none
+		border 1px solid rgba(255,255,255,0.2)
+		border-radius 50%
+		transition background 0.4s ease border-color 0.4s ease
+		@media mobile
+			top auto
+			bottom -20px
+			margin-top 0
+			z-index 100
+			left 10px
+		&:focus
+		&::-moz-focus-inner
+			outline none
+		&:hover
+			background-color #fff
+			background-image url($slide-arr-l-red)
+
+
+	&.slick-next
+		background-image url($slide-arr-r)
+		left auto
+		right 2rem
+		&:hover
+			background-image url($slide-arr-r-red)
+	&.slick-disabled
+		display none!important
+
+.section-contest-slider .slick-arrow
+	&.slick-prev
+		border-color #fff
+		background-color #fff
+		background-image url($slide-arr-l-red)
+		@media mobile
+			bottom 35%
+			left 10px!important
+		&:hover
+			background-color $red
+			border-color $red
+			background-image url($slide-arr-l)
+
+.section-contest-slider .slick-arrow
+	&.slick-next
+		border-color #fff
+		background-color #fff
+		background-image url($slide-arr-r-red)
+		@media mobile
+			bottom 35%
+			right 10px!important
+		&:hover
+			background-color $red
+			border-color $red
+			background-image url($slide-arr-r)
+
+.section-contest-slider .slick-arrow.slick-prev
+.section-contest-slider .slick-arrow.slick-next
+	left 11rem
+	z-index 100
+	margin-top -3.8rem
+.section-contest-slider .slick-arrow.slick-next
+	left auto
+	right 11rem
+
+.slick-dots
+	text-align center
+	position relative
+	left -6.5rem
+	@media mobile
+		left auto
+	li
+		display inline-block
+		margin 7rem 0.8rem 0
+		border 2px solid rgba(255,255,255,0.3)
+		border-radius 50%
+		width 9px
+		height 9px
+		@media small
+			width 7px
+			height 7px
+		button
+			outline 0
+			display block
+			font-size 0
+			line-height 0
+			border 0
+			width 100%
+			height 100%
+			border-radius 50%
+			background transparent
+			cursor pointer
+		&.slick-active
+			background $red
+			border-color $red
+		& button:focus
+		& button::-moz-focus-inner
+			outline none
+			border 0

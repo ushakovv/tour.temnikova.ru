@@ -1,0 +1,143 @@
+.footer {
+	padding: 40px 0;
+	
+	@media (max-width: 768px) {
+		padding: 16px;
+	}
+}
+
+.footer__logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 55px;
+	margin-left: -65px;
+
+	@media (max-width: 768px) {
+		& {
+			margin-left: 0;
+		}
+	}
+}
+
+.footer__divider {
+	border-right: 1px solid #fff;
+	opacity: 0.1;
+	height: 38px;
+	margin: 0 40px;
+	
+	@media (max-width: 768px) {
+		margin: 0 20px;
+	}
+}
+
+.footer__temnikova {
+	width: 160px;
+	height: 20px;
+
+	& > img {
+		max-width: 100%;
+	}
+}
+
+.footer__volkov {
+	width: 94px;
+	height: 30px;
+
+	& > img {
+		width: 100%;
+	}
+
+	@media (max-width: 768px) {
+		margin-right: 0;
+	}
+}
+
+.footer__social {
+	display: flex;
+	justify-content: center;
+}
+
+.footer__icon {
+	margin: 0 10px;
+	width: 30px;
+	height: 30px;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+
+	.footer__logo_social {
+		width: 100%;
+	}
+
+	&:hover .footer__logo_social {
+		 display: none;
+	}
+
+	.footer__logo_social_h {
+		display: none;
+	}
+
+	&:hover .footer__logo_social.footer__logo_social_h {
+		display: block;
+ 	}
+}
+
+.footer__icon_vk {
+	background-image: url(vk.png);
+
+	&:hover {
+		background-image: url(vk-hover.png);
+	}
+}
+
+.footer__icon_fb {
+	background-image: url(fb.png);
+
+	&:hover {
+		background-image: url(fb-hover.png);
+	}
+}
+
+.footer__icon_tw {
+	background-image: url(tw.png);
+
+	&:hover {
+		background-image: url(tw-hover.png);
+	}
+}
+
+.footer__icon_pi {
+	background-image: url(pi.png);
+
+	&:hover {
+		background-image: url(pi-hover.png);
+	}
+}
+
+.footer__icon_in {
+	background-image: url(in.png);
+
+	&:hover {
+		background-image: url(in-hover.png);
+	}
+}
+
+.footer__icon_ok {
+	background-image: url(ok.png);
+
+	&:hover {
+		background-image: url(ok-hover.png);
+	}
+}
+
+.footer__icon_yt {
+	background-image: url(yt.png);
+
+	&:hover {
+		background-image: url(vk-hover.png);
+	}
+}
+
+.concert-photo-album {
+	display: none;
+}

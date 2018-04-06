@@ -1,0 +1,132 @@
+#modalsBg
+
+.modalWindow#add-item
+	.modalWindow-close
+	.modalWindow-content
+		.modalWindow-title Товар добавлен в корзину
+		table.products-list
+			tr
+				td(width="70%") Ваниль
+					.subline 24 пачки
+				td(width="20%") 6 240
+					span.currency ₽
+				td(width="10%")
+					a(href="#").remove-item
+						i.icon.delete
+
+		.product-quantity
+			a(href="#").btn.round
+				i.icon.minus
+			span.quantity 2
+			a(href="#").btn.round
+				i.icon.plus
+			a(href="#").btn.order Оформить заказ
+
+
+.modalWindow#registration
+	.modalWindow-close
+	.modalWindow-content
+		.modalWindow-title Регистрация
+		form.registration
+			.input.w60.left
+				input(type="text", placeholder="Имя")
+			.input.w35.right
+				input(type="text", placeholder="Дата рождения")
+			.input.w100
+				input(type="email", placeholder="E-mail")
+			.input.w48.left
+				input(type="password", placeholder="Пароль")
+			.input.w48.right
+				input(type="password", placeholder="Повторите пароль")
+			.clear
+			.form-radio-group
+				.form-radio-group-item
+					input#v1(type="radio", name="reg")
+					label(for="v1") Мужчина
+				.form-radio-group-item
+					input#v2(type="radio", name="reg")
+					label(for="v2") Женщина
+			.clear
+			.form-checkbox
+				input(type="checkbox", id="agree")
+				label.checkbox(for="agree") Нажимая кнопку «Зарегистрироваться», я принимаю условия<br>
+					a(href="") Пользовательского соглашения
+					|  и
+					a(href="")  Политикой конфиденциальности.
+
+			input(type="submit", value="Зарегистрироваться").btn
+
+
+.modalWindow#auth
+	.modalWindow-close
+	.modalWindow-content
+		.modalWindow-title Вход
+		form.login
+			.input.w100
+				input(type="email", placeholder="E-mail")
+			.input.w100
+				input(type="password", placeholder="Пароль")
+			a(href="#recover").modalWindowLink Забыли пароль
+				i.icon.arr-r
+			a(href="#registration").modalWindowLink.right Зарегистрироваться
+				i.icon.arr-r
+			input(type="submit", value="Войти").btn
+
+
+.modalWindow#recover
+	.modalWindow-close
+	.modalWindow-content
+		.modalWindow-title Восстановление доступа
+		form.login
+			p Укажите логин, для которого хотите восстановить пароль.
+			.input.w100
+				input(type="email", placeholder="E-mail")
+			input(type="submit", value="Выслать новый пароль").btn
+			p
+				a(href="#registration").modalWindowLink.center Зарегистрироваться
+					i.icon.arr-r
+
+
+
+.modalWindow#food-video
+	.modalWindow-close
+	.modalWindow-content
+		video(width='1080', height='720', controls='')
+			source(src='files/tobe.mp4', type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+			source(src='files/tobe.webm', type='video/webm; codecs="vp8, vorbis"')
+			source(src='files/tobe.ogv', type='video/ogg; codecs="theora, vorbis"')
+
+.modalWindow#instagram.insta
+	.modalWindow-close
+	.modalWindow-content
+		.source
+		.like-counter 120
+
+.modalWindow#article.nano
+	.modalWindow-close
+	.modalWindow-content.nano-content
+		.article-item-title Ученые нашли новые доказательства наличия воды на Плутоне
+		.article-item-text
+			p Снимки Харона, одного из спутников Плутона, сделанные космической станцией New Horizons, свидетельствуют о том, что под его поверхностью существовал океан. Как видно на сделанной в июле 2015 года фотографии, на крупнейшем спутнике Плутона есть сеть каньонов глубиной до 6,5 километров.
+			p В NASA говорят, что, по всей видимости, Харон был достаточно теплым небесным телом, чтобы водяной лед, которым окружен спутник, мог растопиться и сформировать океан под поверхностью. Со временем планета остыла, и расширившийся лед вышел на поверхность, что и привело к появлению обнаруженной New Horizons сети впадин.
+			p Харон был открыт в 1978 году. Считается, что он является спутником Плутона, однако существует и теория, что Плутон вместе с ним составляют двойную систему небесных тел.
+			p Аппарат New Horizons летом 2015 года достиг Плутона и близлежащих небесных тел. Станция впервые в истории сделала цветные снимки карликовой планеты и передала фотографии поверхности всех его пяти спутников.
+			p Снимки Харона, одного из спутников Плутона, сделанные космической станцией New Horizons, свидетельствуют о том, что под его поверхностью существовал океан. Как видно на сделанной в июле 2015 года фотографии, на крупнейшем спутнике Плутона есть сеть каньонов глубиной до 6,5 километров.
+			p В NASA говорят, что, по всей видимости, Харон был достаточно теплым небесным телом, чтобы водяной лед, которым окружен спутник, мог растопиться и сформировать океан под поверхностью. Со временем планета остыла, и расширившийся лед вышел на поверхность, что и привело к появлению обнаруженной New Horizons сети впадин.
+			p Харон был открыт в 1978 году. Считается, что он является спутником Плутона, однако существует и теория, что Плутон вместе с ним составляют двойную систему небесных тел.
+			p Аппарат New Horizons летом 2015 года достиг Плутона и близлежащих небесных тел. Станция впервые в истории сделала цветные снимки карликовой планеты и передала фотографии поверхности всех его пяти спутников.
+
+//- .modalWindow#chat-auth
+//- 	.modalWindow-close
+//- 	.modalWindow-content
+//- 		.modalWindow-title Задайте вопрос специалисту
+//- 		form.login
+//- 			.input.w100
+//- 				input(type="text", placeholder="Имя")
+//- 			.input.w100
+//- 				input(type="email", placeholder="E-mail")
+//- 			.input.w100
+//- 				input(type="text", placeholder="Номер телефона")
+//- 			.chat-message-text
+//- 				textarea(rows="5" placeholder="Ваш вопрос")
+//- 			input(type="submit", value="Отправить").btn

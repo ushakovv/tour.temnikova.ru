@@ -1,0 +1,103 @@
+extends layouts/default
+
+block content
+	section.section
+		.section-inner
+			.section-map-buy
+				.section-title.map-title Где купить
+				.network-list
+					.select-city-menu
+						select(data-placeholder="Москва" style="width:350px;" class="chosen-select")
+							option(value='1') Москва
+							option(value='2') Санк-Петербург
+							option(value='3') Москва
+							option(value='2') Санк-Петербург
+							option(value='1') Москва
+							option(value='2') Санк-Петербург
+							option(value='1') Москва
+							option(value='2') Санк-Петербург
+							option(value='1') Москва
+							option(value='2') Санк-Петербург
+							option(value='1') Москва
+							option(value='2') Санк-Петербург
+							option(value='1') Москва
+							option(value='2') Санк-Петербург
+							option(value='1') Москва
+							option(value='2') Санк-Петербург
+							option(value='1') Москва
+							option(value='2') Санк-Петербург
+							option(value='1') Москва
+							option(value='2') Санк-Петербург
+
+
+					.network-list-btn
+						.btn.on-list.maplist-active Списком
+						.btn.on-map На карте
+				.secton-maplist
+					table.map-buy-table
+						thead
+							tr
+								th
+									a.maplist-filter-arrow(href="#") Название магазина
+								th
+									a.maplist-filter-arrow(href="#") Адрес
+								th
+									a.maplist-filter-arrow(href="#") Метро
+						tbody
+							tr
+								td
+									a(href="#").more-link.map-link Мега теплый стан
+								td Ул. Ленина, д. 235
+								td
+									span.maplist-metro.metro-yellow
+									| Авиамоторная
+							tr
+								td
+									a(href="#").more-link.map-link Мега Белая Дача
+								td 14 км МКАД (перечесение с Новоегорьевским шоссе), мкр. Белые Дачи.
+								td
+									span.maplist-metro.metro-light-green
+									| Бибирево
+							tr
+								td
+									a(href="#").more-link.map-link Петровский Пассаж ОАО
+								td Ленинградское шоссе, за МКАДом (72 км МКАД)
+								td
+									span.maplist-metro.metro-green
+									| Воробьевы горы
+							tr
+								td
+									a(href="#").more-link.map-link Город Лефортово
+								td ул. Вавилова, 3 площадь Киевского вокзала, дом 2
+								td
+									span.maplist-metro.metro-blue
+									| Динамо
+							tr
+								td
+									a(href="#").more-link.map-link Мега Химки
+								td Тихорецкий бульвар, дом 1.
+								td
+									span.maplist-metro.metro-purple
+									| Бульвар адмирала Ушакова
+							tr
+								td
+									a(href="#").more-link.map-link Европейский
+								td Развязка между Варшавским, Каширсим шоссе и Коломенским проездом.
+								td
+									span.maplist-metro.metro-light-blue
+									| Каховская
+							tr
+								td
+									a(href="#").more-link.map-link Вегас Кунцево
+								td ул. Вавилова, 3 площадь Киевского вокзала, дом 2
+								td
+									span.maplist-metro.metro-purple
+									| Кожуховская
+							tr.maplist-empty-cell
+								td
+								td
+								td
+					.maplist-map#map
+				.maplist-marker-info
+					.tobe-flag.red-flag Работающие центры выдачи
+					.tobe-flag.gray-flag Не работающие центры выдачи

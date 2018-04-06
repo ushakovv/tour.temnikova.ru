@@ -1,0 +1,87 @@
+extends layouts/default
+
+block content
+	section.section
+		.section-inner
+			.modalWindow.not-really-modalWindow#contestWindow.full-width
+				.modalWindow-content
+					.modalWindow-header
+						.top-line С 15 ноября по 15 июня<br>Участвуй в конкурсе! 
+							span.red #tobe_fit
+						.main-title 
+							span.red Выиграй 
+							span.line1 годовой абонемент
+							span.line2 и фитнес тур в Сочи
+					ul.contest-steps
+						li
+							.num 1
+							p Закажи любой из трёх вкусов  напитка 
+								b Tobe® 
+								| в&nbsp;нашем магазине, сделайте своё фото вместе с&nbsp;упаковкой 
+								b Tobe®
+						li
+							.num 2
+							p Опубликуйте свою фотографию вместе с&nbsp;упаковкой 
+								b Tobe®   
+								| в соцсетях:<br> Вконтакте, Facebook, Instagram с&nbsp;хэштэгом  
+								b.red #TOBE_FIT		
+						li
+							.num 3
+							p Жюри 
+								b Tobe®  
+								| выбирет победителей из&nbsp;участников с&nbsp;лучшими результатами  рейтинга.
+					a(href="/files/pravila-to-be.pdf", target="_blank").btn Правила акции
+					.clear
+					.participant-table-title Фото участников конкурса 
+						span.red #tobe_fit
+					.participant-filter
+						a(href="#") По дате публикации
+						a(href="#") По рейтингу
+					ul.participant-table.image-duotone-list
+						li
+							a.item(href="#instagram").modalWindowLink.video
+								img.gradient(src="i/photo-demo.jpg", data-gradient-map="black, #e00000")
+								img(src="i/photo-demo.jpg")
+								.like-counter 120
+						li
+							a.item(href="#instagram").modalWindowLink
+								img.gradient(src="https://cdn-images-1.medium.com/max/1000/1*fVBLHL_etXwDRmY223LPuQ.jpeg", data-gradient-map="black, #e00000")
+								img(src="https://cdn-images-1.medium.com/max/1000/1*fVBLHL_etXwDRmY223LPuQ.jpeg")
+								.like-counter 125
+						li
+							a.item(href="#instagram").modalWindowLink.video
+								img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+								img(src="i/photo-demo.jpg")
+								.like-counter 1202
+						li
+							a.item(href="#instagram").modalWindowLink
+								img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+								img(src="i/photo-demo.jpg")
+								.like-counter 0
+						li
+							a.item(href="#instagram").modalWindowLink.video
+								img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+								img(src="i/photo-demo.jpg")
+								.like-counter 12
+						li
+							a.item(href="#instagram").modalWindowLink
+								img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+								img(src="i/photo-demo.jpg")
+								.like-counter 140
+						li
+							a.item(href="#instagram").modalWindowLink.video
+								img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+								img(src="i/photo-demo.jpg")
+								.like-counter 100
+						li
+							a.item(href="#instagram").modalWindowLink.video
+								img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+								img(src="i/photo-demo.jpg")
+								.like-counter 90
+						li
+							a.item(href="#instagram").modalWindowLink
+								img.gradient(src="i/photo-demo.jpg",	data-gradient-map="black, #e00000")
+								img(src="i/photo-demo.jpg")
+								.like-counter 120
+					.clear
+					a(href="#").btn Загрузить еще

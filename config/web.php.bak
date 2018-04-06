@@ -1,0 +1,179 @@
+<?php
+
+$config = [
+    'language' => 'en',
+    'id' => 'basic',
+    'basePath' => dirname(__DIR__),
+    'aliases' => [
+        '@core' => '@app/core',
+        '@admin' => '@app/modules/admin',
+        '@static' => '@app/htdocs/static',
+
+        '@components' => '@app/components'
+    ],
+    'bootstrap' => ['log'],
+    'components' => [
+
+        'request' => [
+            'class' => 'app\components\LangRequest',
+            'cookieValidationKey' => 'swYbGQnJGfwiS88UnLDcUUQwsl9eU7S-',
+        ],
+        'formatter' => [
+            'class' => 'core\components\Formatter',
+            'sizeFormatBase' => 1000
+        ],
+        'cache' => [
+            'class' => 'yii\caching\FileCache',
+        ],
+        'user' => [
+            'identityClass' => 'app\models\User',
+            'enableAutoLogin' => true,
+            'loginUrl' => ['user/login']
+        ],
+
+
+        'log' => [
+            'traceLevel' => YII_DEBUG ? 3 : 0,
+            'targets' => [
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning'],
+                ],
+            ],
+        ],
+        //'db' => require(__DIR__ . '/db.php'),
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=host;dbname=dbname',
+            'username' => 'username',
+            'password' => 'password',
+            'charset' => 'utf8',
+        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+
+            'rules' => [
+                /*[
+                    'class' => 'yii\web\GroupUrlRule',
+                    'prefix' => 'user',
+                    'rules' => [
+                        '<id:\d+>'                               => 'profile/show',
+                        '<action:(login|logout)>'                => 'security/<action>',
+                        '<action:(register|resend)>'             => 'registration/<action>',
+                        'confirm/<id:\d+>/<code:[A-Za-z0-9_-]+>' => 'registration/confirm',
+                        'forgot'                                 => 'recovery/request',
+                        'recover/<id:\d+>/<code:[A-Za-z0-9_-]+>' => 'recovery/reset',
+                        'settings/<action:\w+>'                  => 'settings/<action>'
+                    ],
+                ],*/
+            ]
+        ],
+        'i18n' => [
+            'translations' => [
+                'my*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    //'basePath' => '@app/messages',
+                    //'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
+            ],
+        ],
+        'imageProcessor' => [
+            'class' => 'core\media\ImageProcessorGd'
+        ],
+        'imageManager' => [
+            'class' => 'core\media\ImageManager',
+            'config' => include('image.php')
+        ],
+        'fs' => [
+            'class' => 'creocoder\flysystem\LocalFilesystem',
+            'path' => '@webroot/files',
+        ],
+        'fileManager' => [
+            'class' => 'core\media\FileManager',
+            'urlPrefix' => '/files'
+        ],
+        'view' => [
+            'class' => 'app\components\View',
+            'renderers' => [
+                'tpl' => [
+                    'class' => 'yii\smarty\ViewRenderer',
+                    'pluginDirs' => ['@app/smartyPlugins']
+                    //'cachePath' => '@runtime/Smarty/cache',
+                ],
+                'twig' => [
+                    'class' => 'yii\twig\ViewRenderer',
+                    'cachePath' => '@runtime/Twig/cache',
+                    // Array of twig options:
+                    'options' => [
+                        'auto_reload' => true,
+                    ],
+                    'globals' => ['html' => '\yii\helpers\Html'],
+                    'uses' => ['yii\bootstrap'],
+                    'functions' => [
+                        new \Twig_SimpleFunction('v', '\core\components\ContentManager::get', ['is_safe' => ['html']]),
+                        new \Twig_SimpleFunction('rev', '\core\components\ContentManager::getRev', ['is_safe' => ['html']]),
+                    ]
+                ],
+            ],
+        ],
+	    'geoip' => [
+		    'class' => 'app\components\SxGeo',
+	    ],
+    ],
+
+'modules' => [
+        'crt7E9sx42' => [
+            'class' => 'admin\Module',
+        ],
+        'treemanager' =>  [
+            'class' => '\kartik\tree\Module',
+            // other module settings, refer detailed documentation
+        ]
+        /*'user' => [
+            'class' => 'app\modules\user\Module'
+            //'class' => 'dektrium\user\Module',
+        ]*/
+    ],
+    'params' => [
+        'adminEmail' => 'admin@example.com',
+        'filesUrl' => '',
+        'siteName' => 'Test',
+        'https' => false,
+        'enableConfirmation' => false,
+        'enableUnconfirmedLogin' => true,
+        'enableGeneratingPassword' => false,
+        'rememberFor' => 3600,
+        'defaultLang' => 'en',
+        'host' => 'http://pewete.dev.promo.ru'
+    ],
+
+];
+
+if (YII_ENV_DEV) {
+    // configuration adjustments for 'dev' environment
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = 'yii\debug\Module';
+
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
+        'generators' => [
+            'richCrud' => [
+                'class' => 'core\gii\richCrud\Generator',
+                'templates' => [
+                    'richCrud2' => '@core/gii/richCrud/default'
+                ]
+            ]        ]
+    ];
+}
+
+if(isset($_GET['update_assets'])){
+    $config['components']['assetManager']['forceCopy'] = true;
+}
+
+return $config;

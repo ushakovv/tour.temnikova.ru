@@ -1,0 +1,80 @@
+.menu-phone {
+	display: none;
+	color: #fff;
+	margin-bottom: 40px;
+}
+
+.menu-phone__ticket {
+	padding: 20px 0;
+	text-align: center;
+}
+
+.menu-phone__item {
+	position: relative;
+	font-size: 16px;
+	line-height: 40px;
+	display: block;
+	text-decoration: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+	color: rgba(255, 255, 255, 0.6);
+	padding-left: 80px;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		width: 26px;
+		height: 26px;
+		top: 7px;
+		left: 40px;
+	}
+}
+
+.menu-phone__item_club,
+.menu-phone__item_stickers,
+.menu-phone__item_shop {
+	color: #fff;
+	font-weight: bold;
+	padding-left: 40px;
+}
+
+.menu-phone__item_club:before {
+	left: 5px;
+	background-image: url(club.png);
+}
+
+.menu-phone__item_stickers:before {
+	left: 5px;
+	background-image: url(stickers.png);
+}
+
+.menu-phone__item_shop:before {
+	left: 5px;
+	background-image: url(shop.png);
+}
+
+.menu-phone__item_tg:before {
+	background-image: url(tg.png);
+}
+
+.menu-phone__item_vb:before {
+	background-image: url(vb.png);
+}
+
+.menu-phone__item_vk:before {
+	background-image: url(vk.png);
+}
+
+.menu-phone__item_im:before {
+	background-image: url(im.png);
+}
+
+.menu-phone__item_apple:before {
+	background-image: url(apple.png);
+}
+
+.menu-phone__item_site:before {
+	background-image: url(site.png);
+}

@@ -1,0 +1,61 @@
+.custom-slider {
+    position: relative;
+
+    &__arrow {
+         position: absolute;
+         z-index: 10;
+         top: 50%;
+         margin-top: -11px;
+         width: 13px;
+         height: 23px;
+         background-size: 100% auto;
+         background-repeat: no-repeat;
+         background-color: transparent;
+         font-size: 0;
+         border: 0;
+         padding: 0;
+         outline: none;
+         cursor: pointer;
+
+        &_left {
+             background-image: url(arrow-left.png);
+             left: -40px;
+         }
+
+        &_right {
+             background-image: url(arrow-right.png);
+             right: -40px;
+        }
+    }
+
+    &__wrapper {
+         overflow: hidden;
+         height: 151px;
+
+        @media (max-width: 768px) {
+            & {
+                height: auto;
+            }
+        }
+
+        .events__city {
+            width: 20%;
+            float: left;
+            box-sizing: border-box;
+            transition: all 1s;
+
+            @media (max-width: 1000px) {
+                & {
+                    width: 33.333333%;
+                }
+            }
+
+            @media (max-width: 768px) {
+                & {
+                    min-height: auto;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

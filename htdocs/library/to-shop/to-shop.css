@@ -1,0 +1,22 @@
+.to-shop {
+	padding: 16px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.to-shop__text {
+	font-size: 16px;
+	line-height: 20px;
+	color: #fff;
+	opacity: 0.4;
+	text-decoration: none;
+}
+
+.to-shop__icon {
+	width: 18px;
+	height: 13px;
+	background-image: url(cart.png);
+	background-size: 100% auto;
+	margin-right: 10px;
+}

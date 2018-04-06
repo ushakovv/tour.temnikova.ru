@@ -1,0 +1,31 @@
+.select-custom {
+    cursor: pointer;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background-color: #1a1c20;
+	color: #6e7072;
+	font-family: 'PT Sans Narrow';
+	font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+	padding: 8px 12px;
+	box-sizing: border-box;
+	appearance: none;
+	padding-right: 30px;
+
+	&__arrow {
+		 background-repeat: no-repeat;
+		 background-size: 11px 6px;
+		 background-image: url(expand.png);
+		 background-position: 90% 50%;
+	}
+
+	option {
+		color: #6e7072;
+		background-color: #1a1c20;
+	}
+	
+	@media (max-width: 768px) {
+		display: block;
+		width: 100%;
+	}
+}

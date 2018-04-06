@@ -1,0 +1,24 @@
+.shop-slider {
+	padding: 35px 0 50px;
+
+	.slider__item {
+		opacity: 0.24
+	}
+}
+
+.shop-slider__header {
+	color: #fff;
+	font-size: 20px;
+	line-height: 20px;
+	opacity: 0.4;
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+.shop-slider__last {
+	border-left: 1px solid #26282b;
+
+	@media (max-width: 768px) {
+		border-top: 1px solid #26282b;
+	}
+}

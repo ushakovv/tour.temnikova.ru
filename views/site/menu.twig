@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="header">
+        <div class="header__menu-open">
+            <div
+                    class="menu-icon"
+                    data-js="dropMenu"
+                    data-class-active="menu-icon_active"
+                    data-menu-id="menu"
+            >
+                <div class="menu-icon__stripe"></div>
+            </div>
+        </div>
+        {% for group in hGroup %}
+            {% if loop.index == 3 %}
+                <img src="/image/logo.png" alt="" class="header__logo">
+            {% endif %}
+            {% if group.link %}
+                <a class="header__item no-phone" target="_blank"  href="{{ group.link }}">
+                    {%  if group.logo %}
+                    <div class="header__item-icon {{ group.logo }}"></div>
+                    {% endif %}
+                    {{ group.title|raw }}
+                </a>
+            {% else %}
+                <div class="header__item no-phone" data-js="dropMenu" data-class-active="header__item_active" data-menu-id="{{ group.id }}">
+                    {%  if group.logo %}
+                        <div class="header__item-icon {{ group.logo }}"></div>
+                    {% endif %}
+                    {{ group.title|raw }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% for group in hGroup %}
+    <div class="drop-menu" data-id="{{ group.id }}">
+        {% for punkt in hPunkt %}
+            {% if punkt.id_group == group.id %}
+                <a class="drop-menu__item {{ punkt.logo }}" href="{{ punkt.link }}">{{ punkt.title }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endfor %}
+
+<div class="menu-phone" data-id="menu">
+    <div class="container">
+        <div class="hr"></div>
+        <div class="menu-phone__ticket">
+            <div class="header__item header__item_phone">
+                <div class="header__item-title">Покупка билетов</div>
+                <div class="header__phone">8-800-555-80-11</div>
+            </div>
+        </div>
+        <div class="hr"></div>
+        {% for group in hGroup %}
+            {% if group.logo is not empty %}
+                <a class="menu-phone__item {{ group.logo | replace({'header__item-icon_': 'menu-phone__item_'}) }}" href="{{ group.link }}">
+                    {{ group.name }}
+                </a>
+            {% endif %}
+            {% for punkt in hPunkt %}
+                {% if punkt.id_group == group.id %}
+                    <a class="menu-phone__item {{ punkt.logo | replace({'drop-menu__item_': 'menu-phone__item_'}) }}" href="{{ punkt.link }}" target="_blank">
+                        {{ punkt.title }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+{% include 'tour_map.twig' %}

@@ -1,0 +1,6 @@
+.map {
+	filter: grayscale(100%);
+}
+.map_right_p {
+	padding-right: 0;
+}

@@ -1,0 +1,12 @@
+.canvas {
+    position: relative;
+}
+
+.canvas_map {
+    position: absolute;
+    top: 0;
+}
+
+.pointer {
+    cursor: pointer;
+}

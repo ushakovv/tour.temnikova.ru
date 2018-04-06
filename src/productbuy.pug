@@ -1,0 +1,198 @@
+extends layouts/default
+
+block body
+	- var bodyClass = "homepage";
+
+
+block content
+	section.section.section-make-choice.productbuy-make-choice#top
+		.section-inner
+			.make-choice-items
+				.make-choice-nav.products-nav
+					a(href="", data-order="1").active
+						img(src="i/pack-vanila.png")
+						| Ваниль
+					a(href="", data-order="2")
+						img(src="i/pack-chocolate.png")
+						| Шоколад
+					a(href="", data-order="3")
+						img(src="i/pack-strawberry.png")
+						| Клубника
+				.landing-flavors-info-tabs
+					.landing-flavors-info.active(data-order="1")
+						.subtitle Состав:
+						p молоко обезжиренное, изолят молочного белка (обогащен мицеллярным казеином), молоко сухое обезжиренное, ароматизаторы пищевые: «Ваниль» и «Сливочный пломбир», подсластитель «Сукралоза». Масса нетто 250г.
+						table.composition
+							tr
+								th
+									.subtitle Пищевая ценность
+								th
+									.subtitle 100г.
+								th
+									.subtitle 250г.
+							tr
+								td Белок
+								td 12 гр.
+								td 30 гр.
+							tr
+								td Углеводы
+								td 5,6 гр.
+								td 14,0 гр.
+							tr
+								td Жир
+								td 0,1 гр.
+								td 0,25 гр.
+							tr
+								td Энергетическая ценность
+								td 296,0 кДж
+								td 740,0 кДж
+
+							tr
+								td (калорийность)
+								td (71,0ккал)
+								td (178 ккал)
+
+					.landing-flavors-info(data-order="2")
+						.subtitle  Состав:
+						p молоко обезжиренное, изолят молочного белка (обогащен мицеллярным казеином), молоко сухое обезжиренное, какао-порошок, стабилизатор (целлюлоза, камедь целлюлозы, хлорид кальция), ароматизатор пищевой «тип Шоколад», подсластитель «Сукралоза». Масса нетто 250г.
+						table.composition
+							tr
+								th
+									.subtitle Пищевая ценность
+								th
+									.subtitle 100г.
+								th
+									.subtitle 250г.
+							tr
+								td Белок
+								td 12 гр.
+								td 30 гр.
+							tr
+								td Углеводы
+								td 5,8 гр.
+								td 14,5 гр.
+							tr
+								td Жир
+								td 0,2 гр.
+								td 0,5 гр.
+							tr
+								td Энергетическая ценность
+								td 303,0 кДж
+								td 758,0 кДж
+							tr
+								td (калорийность)
+								td (72,0ккал)
+								td (180 ккал)
+
+					.landing-flavors-info(data-order="3")
+						.subtitle Состав:
+						p молоко обезжиренное, изолят молочного белка (обогащен мицеллярным казеином), молоко сухое обезжиренное, ароматизаторы пищевые: «Сливочный», «Клубника», подсластитель «Сукралоза». Масса нетто 250г.
+						table.composition
+							tr
+								th
+									.subtitle Пищевая ценность
+								th
+									.subtitle 100г.
+								th
+									.subtitle 250г.
+							tr
+								td Белок
+								td 12 гр.
+								td 30 гр.
+							tr
+								td Углеводы
+								td 5,6 гр.
+								td 14,0 гр.
+							tr
+								td Жир
+								td 0,1 гр.
+								td 0,25 гр.
+							tr
+								td Энергетическая ценность
+								td 296,0 кДж
+								td 740,0 кДж
+							tr
+								td (калорийность)
+								td (71,0ккал)
+								td (178 ккал)
+				.make-choice-item.productbuy-item.active(data-order="1")
+					.make-choice-pack
+					.make-choice-text
+						h3 Ваниль
+						p.text Коктейль молочный ультрапастеризованный, обогащенный белком. Массовая доля жира 0,1%
+						.make-choice-pack-size
+						p.pack-size В упаковке 24 пачки<br> Цена упаковки
+							b.price 3 120
+								span.red ₽
+						table.products-list
+							tr
+								td(width="50%") Ваниль
+									.subline 24 пачки
+								td(width="20%") 6 240
+									span.currency ₽
+								td(width="10%")
+									a(href="#").remove-item
+										i.icon.delete
+						.product-quantity
+							a(href="#").btn.round
+								i.icon.minus
+							span.quantity 2
+							a(href="#").btn.round
+								i.icon.plus
+						a(href="#add-item").btn.buy.modalWindowLink
+							i.icon.cart
+							| Оформить заказ
+				.make-choice-item.productbuy-item(data-order="2")
+					.make-choice-pack.chocolate
+					.make-choice-text
+						h3 Шоколад
+						p.text Коктейль молочный ультрапастеризованный, обогащенный белком. Массовая доля жира 0,2%
+						.make-choice-pack-size
+						p.pack-size В упаковке 24 пачки<br> Цена упаковки
+							b.price 4 220
+								span.red ₽
+						table.products-list
+							tr
+								td(width="50%") Ваниль
+									.subline 24 пачки
+								td(width="20%") 8 440
+									span.currency ₽
+								td(width="10%")
+									a(href="#").remove-item
+										i.icon.delete
+						.product-quantity
+							a(href="#").btn.round
+								i.icon.minus
+							span.quantity 2
+							a(href="#").btn.round
+								i.icon.plus
+						a(href="#add-item").btn.buy.modalWindowLink
+							i.icon.cart
+							| Оформить заказ
+				.make-choice-item.productbuy-item(data-order="3")
+					.make-choice-pack.strawberry
+					.make-choice-text
+						h3 Клубника
+						p.text Коктейль молочный ультрапастеризованный, обогащенный белком. Массовая доля жира 0,1%
+						.make-choice-pack-size
+						p.pack-size В упаковке 24 пачки<br> Цена упаковки
+							b.price 6 220
+								span.red ₽
+						table.products-list
+							tr
+								td(width="50%") Ваниль
+									.subline 24 пачки
+								td(width="20%") 12 440
+									span.currency ₽
+								td(width="10%")
+									a(href="#").remove-item
+										i.icon.delete
+						.product-quantity
+							a(href="#").btn.round
+								i.icon.minus
+							span.quantity 2
+							a(href="#").btn.round
+								i.icon.plus
+						a(href="#add-item").btn.buy.modalWindowLink
+							i.icon.cart
+							| Оформить заказ
